@@ -1,0 +1,61 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element UM530.DAT
+$ *1    15-JUN-1990 16:39:35 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element UM530.DAT
+ID MSC, UM530 $ MG 10 FEB 81 DBS=UM530
+$ID MSC,D24D60 $ BASIC STATICS  MG 14 JUN 79
+$ MODIFIED VERSION TO MAKE OPTP FOR UM531 DECK
+TIME    5
+$SOL 24
+SOL 101 $ STATICS
+$CHKPNT
+CEND
+TITLE=DEMONSTRATION PROBLEM, FLAT PLATE                        UM530
+SUBTITLE=STATIC ANALYSIS WITH TWO LOADING CONDITIONS
+  ECHO = BOTH
+  SPC=102
+  DISPL = ALL
+  ELFORCE = ALL
+SUBCASE 1
+  LABEL=PLOAD2, UNIFORM PRESSURE LOADING
+  LOAD=1
+SUBCASE 2
+  LABEL=BEAM-COLUMN CRITICAL BUCKLING LOAD ON PLATE EDGE
+  LOAD=2
+BEGIN BULK
+$
+$  PLOTOPT CARD USED TO GENERATE MSGVIEW PLOT SETS
+$
+$PLOTOPT NO      YES     YES
+$
+CQUAD4  11      21      1       2       5       4
+CQUAD4  12      21      2       3       6       5
+CQUAD4  13      21      4       5       8       7
+CQUAD4  14      21      5       6       9       8
+CBEAM   15      15      7       10      1
+CBEAM   16      15      9       11      3
+GRID    1
+GRID    2               2.0
+GRID    3               4.0
+GRID    4                       3.0
+GRID    5               2.0     3.0
+GRID    6               4.0     3.0
+GRID    7                       6.0
+GRID    8               2.0     6.0
+GRID    9               4.0     6.0
+GRID    10                      6.0     1.0
+GRID    11              4.0     6.0     1.0
+MAT1,   31      7.7+10,,         .3      2.8+3 $ AL., KG-NEWT-METERS
+MAT1,32,7.7+10,,.3 $ MASSLESS BEAMS
+$   AUTOMATIC CONSTRAINT OF SINGULAR D.O.F.=S
+PARAM   AUTOSPC YES
+PARAM   NEWSEQ  -1
+PSHELL  21      31      .05     31
+PBEAM   15      32      .001    .0005   .0005           0.0
+$       FIX ONE EDGE
+SPC1    102     123456  1       2       3
+$ LOAD-TYPE DATA
+FORCE   2       7               -.25            1.8+6
+FORCE   2       9               -.25            1.8+6
+FORCE   2       8               -.50            1.8+6
+PLOAD2  1       480.0   11      THRU    14
+ENDDATA

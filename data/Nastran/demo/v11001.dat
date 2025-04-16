@@ -1,0 +1,46 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V11001.DAT
+$ *1    15-JUN-1990 16:43:15 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V11001.DAT
+ID MSC, V11001   $
+$ID MSC, V2901 $ MAG 22-JULY-81
+TIME 5
+$SOL MODAL COMPLEX EIGENVALUE
+SOL 110
+CEND
+TITLE=EIGENVALUES OF A THREE-BY-THREE MATRIX, MODAL METHOD --  V11001
+SUBTITLE=MARCUS, BASIC THEOREMS IN MATRIX THEORY: PP.
+M2GG=UNITY
+K2PP=DIFF
+CMETHOD=1   $ EIGENVALUE METHOD
+METHOD=1    $ MODAL METHOD
+ DISPLACEMENT=ALL
+ SVECTOR=ALL
+BEGIN BULK
+$--- DUMMY GRID TO GET OVER SEP1 FATAL MESSAGE
+GRID    9999            0.0     0.0     0.0             123456
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+SPOINT  1       THRU    3
+CELAS4  10      1.      1
+CELAS4  12      1.      1       2
+CELAS4  23      1.      2       3
+CELAS4  30      1.      3
+$DMIG,   UNITY   0       6       1       0       $ IDENTITY MATRIX
+$=,      =,      1,      ,       ,       1,      ,       1.
+$=,      =,      *(1),   ,       ,       *(1),   ==
+$=(1)
+DMIG    UNITY   0       6       1       0                                       
+DMIG    UNITY   1                       1               1.                      
+DMIG    UNITY   2                       2               1.                      
+DMIG    UNITY   3                       3               1.                      
+DMIG    DIFF    0       1       1       0
+DMIG    DIFF    1                       1               0.              +DM1
++DM1    2               2.              3               1.
+DMIG    DIFF    2                       1               -1.             +DM2
++DM2    2               -1.             3               4.
+DMIG    DIFF    3                       1               3.              +DM3
++DM3    2               2.              3               -3.
+EIGC    1       HESS    MAX                                             +EIGC
++EIGC,  ,       ,       ,       ,       ,       ,       3       $ ALL VECTORS
+EIGR    1       GIV                             3                       +EIGR
++EIGR   MASS
+ENDDATA

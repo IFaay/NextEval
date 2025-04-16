@@ -1,0 +1,119 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V15902S.DAT
+$ *2    13-JAN-1994 16:41:36 A_BOYADJIAN "68 PLUS/G/ HEAT TRANSFER CONVERTED DECKS FOR V68 /DCC"
+$ *1    15-JUN-1990 16:43:44 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V15902S.DAT
+$ DEC/CMS REPLACEMENT HISTORY, ELEMENT V15902S.DAT
+$ *1    15-JUN-1990 16:43:44 CMSMGR "66B PLUS/G 66B/ INITIAL INSTALLATION OF DEMO TEST PROBLEMS"
+$ DEC/CMS REPLACEMENT HISTORY, ELEMENT V15902S.DAT
+ID MSC, V15902S  $
+$ID MSC, V8902S $ WHB 5-AUG-81
+$SOL 89
+SOL 159
+TIME 3 $ CHANGED FROM MARGINAL 2 MIN 31JAN83
+CEND
+ANALYSIS = HEAT
+TITLE= TRANSIENT HEAT CONDUCTION OF A SLAB, PROB. --           V15902S
+SUBTITLE=A.J. CHAPMAN, HEAT TRANSFER, 1974; PP.136 EXAMP. 4.3
+DLOAD=100
+TSTEPNL=300
+IC=400
+ THERMAL=ALL
+$ LAST MODIFIED 18-APR-1983
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......
+CELAS2  500     1.+10   5000    1
+CHBDYG  100             AREA4
+        100     400     300     200
+CHBDYG  101             AREA4
+        110     410     310     210
+PCONV   2000    3000
+CONV    100     2000                    5000    5000    5000    5000
+CONV    101     2000                    5000    5000    5000    5000
+CHEXA   1       1000    100     200     300     400     101     201
+        301     401
+CHEXA   2       1000    101     201     301     401     102     202
+        302     402
+CHEXA   3       1000    102     202     302     402     103     203
+        303     403
+CHEXA   4       1000    103     203     303     403     104     204
+        304     404
+CHEXA   5       1000    104     204     304     404     105     205
+        305     405
+CHEXA   6       1000    105     205     305     405     106     206
+        306     406
+CHEXA   7       1000    106     206     306     406     107     207
+        307     407
+CHEXA   8       1000    107     207     307     407     108     208
+        308     408
+CHEXA   9       1000    108     208     308     408     109     209
+        309     409
+CHEXA   10      1000    109     209     309     409     110     210
+        310     410
+GRID    100             0.      0.      0.
+GRID    101             .083333 0.      0.
+GRID    102             .166666 0.      0.
+GRID    103             .249999 0.      0.
+GRID    104             .333332 0.      0.
+GRID    105             .416665 0.      0.
+GRID    106             .499998 0.      0.
+GRID    107             .583331 0.      0.
+GRID    108             .666664 0.      0.
+GRID    109             .749997 0.      0.
+GRID    110             .83333  0.      0.
+GRID    200             0.      1.0     0.
+GRID    201             .083333 1.0     0.
+GRID    202             .166666 1.0     0.
+GRID    203             .249999 1.0     0.
+GRID    204             .333332 1.0     0.
+GRID    205             .416665 1.0     0.
+GRID    206             .499998 1.0     0.
+GRID    207             .583331 1.0     0.
+GRID    208             .666664 1.0     0.
+GRID    209             .749997 1.0     0.
+GRID    210             .83333  1.0     0.
+GRID    300             0.      1.0     1.0
+GRID    301             .083333 1.0     1.0
+GRID    302             .166666 1.0     1.0
+GRID    303             .249999 1.0     1.0
+GRID    304             .333332 1.0     1.0
+GRID    305             .416665 1.0     1.0
+GRID    306             .499998 1.0     1.0
+GRID    307             .583331 1.0     1.0
+GRID    308             .666664 1.0     1.0
+GRID    309             .749997 1.0     1.0
+GRID    310             .83333  1.0     1.0
+GRID    400             0.      0.      1.0
+GRID    401             .083333 0.      1.0
+GRID    402             .166666 0.      1.0
+GRID    403             .249999 0.      1.0
+GRID    404             .333332 0.      1.0
+GRID    405             .416665 0.      1.0
+GRID    406             .499998 0.      1.0
+GRID    407             .583331 0.      1.0
+GRID    408             .666664 0.      1.0
+GRID    409             .749997 0.      1.0
+GRID    410             .83333  0.      1.0
+MAT4    200     .4      20.
+MAT4    3000                            4.
+PSOLID  1000    200
+SLOAD   500     5000    60.+10
+SPOINT  5000
+TEMP    400     5000    60.
+TEMPD   400     180.
+TLOAD2  100     500                     0.      1.E+10  0.      0.
+        0.      0.
+TSTEPNL 300     220     .05     5
+$
+$User Information Message: A number of default values are used when certain parameters are not available from the old decks.
+$                          These parameters are given as the follows:
+$CHBDYP  E1=3.141 E2=1.414 E3=1.732
+$PHBDY   D1=1. D2=1.
+$PCONVM  FORM=0 FLAG=1 COEF=1.E-6 EXPR=0. EXPPI=0. EXPPO=0.
+$CONVM   TA1=99999
+$SPC     C1=1
+$MAT4    RHO (DENSITY) = 1.
+$VIEW3D  ICAVITY=1
+$RADCAV  ICAVITY=1 RMAX=0.1
+$RADMTX  ICAVITY=1
+$RADLST  ICAVITY=1 MTXTYP=1
+ENDDATA

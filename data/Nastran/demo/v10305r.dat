@@ -1,0 +1,48 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10305R.DAT
+$ *1    15-JUN-1990 16:41:56 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10305R.DAT
+RESTART $ RESTART FROM V10105D, DBS=V10105D
+ID MSC, V10305R  $
+$ID MSC, V0305O $ JRH-3FEB1982
+SOL 103
+$ SOL 3
+TIME 5 $
+$ READ 10 $ V2405N
+CEND
+TITLE = EXAMPLE OF NORMAL MODES SOLUTION                       V10305R
+SPC=30
+METHOD = 2
+DISPLACEMENT = ALL
+OUTPUT(PLOT)
+SET 1 = ALL
+AXES Y,X,Z
+VIEW 0.,0.,0.
+PLOT MODAL 0 SYMBOLS 2
+$ LAST MODIFIED 14-JUN-1983
+BEGIN BULK
+$       EID     PID     GA      GB      X1      X2      X3
+$$CBEAM   1       1       10      20      0.      0.      1.
+$$CBEAM   2       1       20      30      0.      0.      1.
+$$CBEAM   3       1       30      40      0.      0.      1.
+$       SID     G       C       MASS
+$$CONM2   1       40      0       1.0
+$       SID     G       CID     F       N1      N2      N3
+$$FORCE   30      40              100.    0.      0.      1.0
+$       ID      CP      X1      X2      X3      CD      PS
+$$GRID    10              0.      0.      0.
+$$GRID    20              10.     0.      0.
+$$GRID    30              20.     0.      0.
+$$GRID    40              30.     0.      0.
+$       MID     E       G       NU      RHO     A       TREF    GE
+$$MAT1    100     1.+7            .3
+$       PID     MID     A(A)    I1(A)   I2(A)   I12(A)  J(A)    NSM(A)
+$$PBEAM   1       100     0.310   0.0390  0.0241          0.0631          +PB1
+$$+PB1    0.5     -0.375  0.5     0.375   -0.5    0.375   -0.5    -0.375  +PB2
+$$+PB2    YESA    1.0                                                     +PB3
+$$+PB3    0.0     0.0
+$       SID     G       C       D
+$$SPC     30      10      123456
+EIGR    2       MGIV                    2       2                       +EIGR
++EIGR   MASS
+PARAM   GRDPNT  0
+ENDDATA

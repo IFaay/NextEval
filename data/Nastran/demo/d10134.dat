@@ -1,0 +1,194 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10134.DAT
+$ *1    15-JUN-1990 16:34:14 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10134.DAT
+NASTRAN  PREFOPT=2
+ID MSC, D10134   $
+$ Modified 29-Sep-2000 v2001 klk
+$ID MSC, D2434    $ SCR=YES
+$ID MSC, D24D34   $
+TIME 4
+$SOL 24,1
+$SOL STATICSX
+SOL 101
+CEND
+TITLE=ELEMENTS SUBJECTED TO THERMAL LOADS                      D10134
+STRESS=ALL
+DISP=ALL
+SPCF=ALL
+OLOAD=ALL
+ELFORCE=ALL
+TEMP(BOTH)=7
+$ LAST MODIFIED 14-JUN-1983
+BEGIN BULK
+CORD2C  7                                                       1.      +CORD7
++CORD7  1.
+GRID    1                                               123456
+GRID    2               10.                             23456
+GRID    3               10.     10.                     3456
+GRID    4                       10.                     456
+GRID    5                               10.             456
+GRID    6               10.             10.             456
+GRID    7               10.     10.     10.             456
+GRID    8                       10.     10.             456
+GRID    9               5.                              456
+GRID    10              10.     5.                      456
+GRID    11              5.      10.                     456
+GRID    12                      5.                      456
+GRID    13                              5.              456
+GRID    14              10.             5.              456
+GRID    15              10.     10.     5.              456
+GRID    16                      10.     5.              456
+GRID    17              5.              10.             456
+GRID    18              10.     5.      10.             456
+GRID    19              5.      10.     10.             456
+GRID    20                      5.      10.             456
+GRID    21              5.      5.                      456
+GRID    22              5.      5.      10.             456
+GRID    210000                                          123456
+GRID    210001          10.                             123456
+GRID    310000                                          123456
+GRID    310001          10.                             123456
+$
+$ MATERIAL PROPERTIES
+$
+MAT1    2       1.0+7           .3              6.-6    10.0
+MAT2    3       1.0989+7.32967+7        1.0989+7        .38462+7        +MAT2
++MAT2   3.-6    9.-6    0.      10.
+MATT1   2                                       21
+MATT2   3                                                               +MATT2
++MATT2  21      21
+$  MAT9 CARD CHANGED TREF FIELD CHANGED FOR V66
+MAT9,4,1.3462+7,.57692+7,.57692+7,,,,1.3462+7,MAT91
++AT91 ,.57692+7,,,,1.3462+7,,,,MAT92
++AT92   .38462+7                .38462+7        .38462+7        6.-6    MAT93
++AT93   6.-6    6.-6                            10.
+$  V66 MAT9 CARD FOR THIS DECK -- ONLY CHANGE IS IN OLD TREF FIELD
+$MAT9,4,1.3462+7,.57692+7,.57692+7,,,,1.3462+7,MAT91
+$+AT91 ,.57692+7,,,,1.3462+7,,,,MAT92
+$+AT92   .38462+7                .38462+7        .38462+7        6.-6    MAT93
+$+AT93   6.-6    6.-6                            0.0
+MATT9   4                                                               MATT91
++ATT91                                                                  MATT92
++ATT92                                                          21      MATT93
++ATT93  21      21
+$
+$ QUAD4 EXAMPLES
+$
+$QUAD4
+GRIDG   1               6       1       -1      -2      -3              GRIDG1
++RIDG1  1       -4
+CGEN    QUAD4   1       1       1
+GRIDMOD 1       0       0               123456
+GRIDMOD 1       1       1               26
+GRIDG   2               6       1       -1      -2      -3              GRIDG2
++RIDG2  1       -4
+CGEN    QUAD4   2       2       2               -45.
+GRIDMOD 2       0       0               123456
+GRIDMOD 2       1       1               26
+GRIDG   3               456     1       -1      -2      -3              GRIDG3
++RIDG3  1       -4
+CGEN    QUAD4   3       1       3
+GRIDMOD 3       0       0               123456
+GRIDMOD 3       1       1               2456
+GRIDMOD 3       101     101     7
+GRIDG   4               6       1       -1      -2      -3              GRIDG4
++RIDG4  1       -4
+CGEN    QUAD4   4       1       4                                       CGEN4
++GEN4   .1      .05     .05     .1
+GRIDMOD 4       0       0               123456
+GRIDMOD 4       1       1               26
+PSHELL  1       2       .1      2               2                       +PSHEL1
++PSHEL1 -.05    .05
+PSHELL  2       3       .1      2               2                       +PSHEL2
++PSHEL2 -.05    .05
+$
+$ TRIA3 EXAMPLES
+$
+$TRIA3
+GRIDG   11              6       1       -1      -2      -3              GRIDG11
++RIDG11 1       -4
+CGEN    TRIA3   11      1       11
+GRIDMOD 11      0       0               123456
+GRIDMOD 11      1       1               26
+GRIDG   12              6       1       -1      -2      -3              GRIDG12
++RIDG12 1       -4
+CGEN    TRIA3   13      2       12              -45.
+GRIDMOD 12      0       0               123456
+GRIDMOD 12      1       1               26
+GRIDG   13              456     1       -1      -2      -3              GRIDG13
++RIDG13 1       -4
+CGEN    TRIA3   15      1       13
+GRIDMOD 13      0       0               123456
+GRIDMOD 13      1       1               2456
+GRIDMOD 13      101     101     7
+GRIDG   14              6       1       -1      -2      -3              GRIDG14
++RIDG14 1       -4
+CGEN    TRIA3   17      1       14                                      CGEN14
++GEN14  .1      .05     .05     .1
+GRIDMOD 14      0       0               123456
+GRIDMOD 14      1       1               26
+
+$
+$ BAR AND BEAM EXAMPLES
+$
+CBAR    21      2       210000  210001          1.              1
+PBAR    2       2       .06     4.5-4   2.-4                            PBAR1
++BAR1   -.1     .15     .1      .15     .1      -.15    -.1     -.15    PBAR2
++BAR2   .8333333.8333333
+CBEAM   31      3       310000  310001          1.
+PBEAM   3       2       .06     4.5-4   2.-4                            PBEAM1
++BEAM1  -.1     .15     .1      .15     .1      -.15    -.1     -.15    PBEAM2
++BEAM2  YESA    1.                                                      PBEAM3
++BEAM3  .8333333.8333333
+$
+$ HEXA EXAMPLES
+$
+GRIDG   51              456     1       -1      -2      -3              GRIDG51
++RIDG51 1       -4      1       -5      -6      -7      -8
+CGEN    HEXA8   51      51      51
+PSOLID  51      2
+GRIDMOD 51      0       0               123456
+GRIDMOD 51      1       1               23456
+GRIDMOD 51      11      11              3456
+GRIDG   52              456     2       -1      -2      -3              GRIDG52
++RIDG52 2       -4      2       -5      -6      -7      -8
+CGEN    HEXA20  52      52      52
+PSOLID  52      4
+GRIDMOD 52      0       0               123456
+GRIDMOD 52      2       2               23456
+GRIDMOD 52      22      22              3456
+$
+$ PENTA EXAMPLES
+$
+$PENTA WITH 15 NODES
+CPENTA  63      52      1       2       3       5       6       7       CPENTA1
++PENTA1 9       10      21      13      14      15      17      18      CPENTA2
++PENTA2 22
+CPENTA  64      52      3       4       1       7       8       5       CPENTA3
++PENTA3 11      12      21      15      16      13      19      20      CPENTA4
++PENTA4 22
+$PENTA WITH 6 NODES
+GRIDG   61              456     1       -1      -2      -3              GRIDG61
++RIDG61 1       -4      1       -5      -6      -7      -8
+GRIDMOD 61      0       0               123456
+GRIDMOD 61      1       1               23456
+GRIDMOD 61      11      11              3456
+CPENTA  61      51      610000  610001  610011  610100  610101  610111
+CPENTA  62      51      610011  610010  610000  610111  610110  610100
+$
+$ TEMPERATURE DEPENDENCE OF THERMAL EXPANSION COEFF.
+$
+TABLEM1 21                                                              +TAB21
++TAB21  10.     6.-6    20.     8.-6    30.     10.-6   ENDT
+$
+$ DEFINITION OF THERMAL LOADS
+$
+TEMPD   7       .0
+TEMPP1  7       1       25.     50.     22.5    27.5                    +TEM
++TEM    11      12      4       17      18
+TEMPP1  7       2       25.     50.     22.5    27.5                    +EMpp33
++EMPP33 13      14      3       15      16
+TEMPRB  7       21      4.      4.      86.6666786.66667130.    130.    TEMPRB1
++EMPRB1 13.     17.     13.     -9.     13.     17.     13.     -9.     TEMPRB2
++EMPRB2 31
+ENDDATA

@@ -1,0 +1,40 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10501.DAT
+$ *1    15-JUN-1990 16:42:39 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10501.DAT
+ID MSC, V10501   $
+$ID MSC, V0501 $ RF5D33 DELETED FOR V65
+$ID MSC, V0501A $ JRH 28-JULY-81
+TIME 5
+$SOL BUCKLING
+SOL 105
+CEND
+TITLE=LATERAL BUCKLING OF CANTILEVER BEAM -- PROB.             V10501
+SUBTITLE=TIMOSHENKO AND GERE, THEORY OF ELASTIC STABILITY; PP. 257
+SPC=101
+SUBCASE 1
+LABEL= STATIC SOLUTION
+LOAD=1
+ DISPLACEMENT=ALL
+ ELFORCE=ALL
+SUBCASE 2
+LABEL= EIGEN SOLUTION
+METHOD=1
+ DISPLACEMENT=ALL
+$ LAST MODIFIED 23-SEP-1985
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.0     0.0     0.0
+=       *(1)    =       *(1.0)  ==
+=(19)
+CBEAM   101     1       1       2       1.0     1.0
+=       *(1)    =       *(1)    *(1)    ==
+=(18)
+PBEAM   1       1       0.05    .00417  1.0417-5        4.0354-5        +PM3
++PM3    NO      1.0                                                     +PM5
++PM5    0.0     0.0
+MAT1    1       10+7    3.0+7
+SPC     101     1       123456
+EIGB    1       INV     -1.0    1.0     6       3       3               +F1
++F1     MAX
+FORCE   1       21              50.     0.      1.0
+ENDDATA

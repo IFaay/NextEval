@@ -1,0 +1,44 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V11101.DAT
+$ *1    15-JUN-1990 16:43:18 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V11101.DAT
+ID MSC, V11101   $
+$ID MSC, V3001 $ WHB 4-AUG-81
+$SOL 30
+SOL 111
+TIME 2
+CEND
+TITLE = MODAL FREQUENCY RESPONSE OF A TWO CELLED BEAM          V11101
+SUBTITLE=DEN HARTOG, MECHANICAL VIBRATIONS; PP. 429-430
+DISPLACEMENT(PHASE,SORT2)=ALL
+METHOD = 1
+DLOAD = 2
+FREQ = 3
+SDAMP = 4
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID,   1,      ,       ,       ,       ,       ,       123456   $ GROUND
+GRID    2               0.5
+GRID    3               1.                              123456
+CBAR,   1,      12,     1,      2,      ,       ,       1.0   $ I1 PLANE IS 1-3
+CBAR    2       12      2       3                       1.0
+PBAR,   12      21      1.0     2.0     1.0     1.25
+MAT1,   21      1.0     1.0
+CONM2   123     2               64.0                                    +CONM2
++CONM2, 1.0,    ,       16.,    ,       ,       16.    $ I11, I22, I33
+CMASS2, 1231    -63.    2       1   $ SUBTRACT FROM CONM2 TO GET UNIT MASS IN 1
+EIGR    1       GIV                             6                       +EIGR
++EIGR,  MASS  $ USE GIVENS METHOD, WITH MASS ORTHOGONALIZATION
+RLOAD2  2       100                     200
+DAREA,  100     2       1       4.0     $ FACTOR=STIFFNESS
+DAREA   100     2       2       192.0
+DAREA   100     2       3       384.
+DAREA   100     2       4       5.0
+DAREA   100     2       5       32.0
+DAREA   100     2       6       16.0
+TABLED1 200                                                             +TBL1
++TBL1   0.      1.0     100.    1.0     ENDT
+FREQ    3       0.0     .1591549.2250791.2756644.3183099.3558813.3898484
+TABDMP1 4                                                               +TDMP1
++TDMP1  .1591549.02     .2250791.04     .2756644.20     .31830991.0     +TDMP2
++TDMP2  .35588132.0     .38984844.0     ENDT
+ENDDATA

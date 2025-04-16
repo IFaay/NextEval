@@ -1,0 +1,59 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10311R.DAT
+$ *1    15-JUN-1990 16:42:19 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10311R.DAT
+RESTART $ RESTART FROM V10311D,DBS=V10311D
+ID MSC, V10311R  $
+$ID MSC,V6304R $ RNC 26SEP84
+SOL 103
+$ SOL 63
+TIME 5
+CEND
+TITLE=NRL VERIFICATION PROBLEM                                 V10311R
+SUBTITLE=DDAM ANALYSIS
+LABEL=RESTART DECK FOR RESULTS FROM RESPONSE SPECTRA INPUT, FROM V6304D
+$SEALL=ALL $ NOTE PARAM,RESDUAL FOR EFFICIENT RESTART$ USE AUTO RESTART(V66)
+METHOD=100 $ THIS CARD USED AS QUALIFIER FOR V66 AND LATER. -- JFC 20MAY88
+DISP(PLOT)=ALL $ AVOID ERROR 2206
+ACCELERATION=ALL $ ALL OUTPUTS ARE SUMMED MODAL RESPONSES
+FORCE=ALL
+$$NOTE METHOD CARD REMOVED FOR EFFICIENT RESTART (V65 AND EARLIER)
+$ NOTE METHOD CARD REQUIRED FOR V66 AND LATER    JFC -- 13MAY88
+METHOD=100 $  JFC -- 13MAY88
+DLOAD=1
+SUBCASE 1
+PARAM,  OPTION, NRL $ REQUEST SUMMATION CONVENTION
+SUBCASE 2
+PARAM,  OPTION, ABS $ CHANGE SUMMATION CONVENTION
+SUBCASE 3
+PARAM,  OPTION, SRSS $ CHANGE IT AGAIN
+$ LAST MODIFIED 05DEC85
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+$$GRID,   1,      ,       0.,     0.,     0.,     ,       345 $ INPUT POINT
+$$GRID,   2,      ,       100.,   0.,     0.,     ,       345
+$$GRID,   3,      ,       0.,     100.,   0.,     ,       345
+$$GRID,   4,      ,       100.,   100.,   0.,     ,       345
+$$GRID,   5,      ,       200.,   100.,   0.,     ,       345
+$$GRID,   6,      ,       200.,   200.,   0.,     ,       345
+$$CBAR,   101,    1,      1,      3,      4
+$$CBAR,   102,    1,      3,      4,      1
+$$CBAR,   103,    1,      2,      4,      1
+$$CBAR,   104,    1,      4,      5,      6
+$$CBAR,   105,    1,      5,      6,      4
+$$PBAR,   1,      1,      10.,    1000.,  1000.,  2000.
+$$MAT1,   1,      30.E6,  ,       .33,    .000725
+$$RBE2,   106,    1,      126,    2 $ TIE TOGETHER GROUNDED POINTS
+$$CONM2,  107,    1,      ,       4.E5
+$$,       ,       ,       ,       ,       ,       2.E8 $ THE LARGE MASS
+$$ASET1,  12,     3,      THRU,   6
+$$ASET1,  126,    1
+$$EIGR,   100,    MGIV,   ,       ,       ,       11
+$$,       MASS
+$$SUPORT, 1,      126$ NEW INPUT ON RESTART BEGINS AFTER THIS LINE
+DLOAD,  1,      1.,     1.,     10,     0.,     10,     0.,     10
+DTI,    SPECSEL,        10,     ,       A,      10,     0.$ACCEL. SPECTRUM
+TABLED1,        10
+,       0.0,    1.0,    10000., 1.0,    ENDT$ UNIT SPECTRUM LINE
+PARAM,  SCRSPEC,        0 $ REQUEST SCALED RESPONSE SPECTRA
+$$PARAM,  RESDUAL,        -1 $ PROVIDES EFFICIENT RESTART(OBSOLETE IN V66)
+ENDDATA

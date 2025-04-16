@@ -1,0 +1,57 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10370D.DAT
+$ *1    15-JUN-1990 16:34:59 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10370D.DAT
+ID MSC, D10370D  $
+$ Modified 28-May-2005 mar v2005
+$ID MSC, D0370N   $
+$ID MSC, D0370    $ SCR=NO DBS=SCRDB:D0370N
+$ID MSC,D03D70 $ NORMAL MODES USING GDR  MG 6 JUN 79
+TIME    5
+diag 8,15
+SOL 103
+$ CHKPNT YES
+CEND
+TITLE=DEMONSTRATION PROBLEM, CANTILEVERED PLATE                D10370D
+SUBTITLE=DYNAMIC ANALYSIS, NORMAL MODES
+LABEL= DYNAMIC REDUCTION, INITIAL RUN, FEW MODES REQUESTED
+ECHO=BOTH
+  SPC=102
+  DISP=ALL
+  METHOD=303
+$ LAST MODIFIED 14-JUN-1983
+BEGIN BULK
+$ START COMMON DATA FROM DECK D24D60
+CQUAD4  11      21      1       2       5       4
+CQUAD4  12      21      2       3       6       5
+CQUAD4  13      21      4       5       8       7
+CQUAD4  14      21      5       6       9       8
+CBEAM   15      15      7       10      1
+CBEAM   16      15      9       11      3
+GRID    1
+GRID    2               2.0
+GRID    3               4.0
+GRID    4                       3.0
+GRID    5               2.0     3.0
+GRID    6               4.0     3.0
+GRID    7                       6.0
+GRID    8               2.0     6.0
+GRID    9               4.0     6.0
+GRID    10                      6.0     1.0
+GRID    11              4.0     6.0     1.0
+MAT1,   31      7.7+10,,         .3      2.8+3 $ AL., KG-NEWT-METERS
+MAT1,32,7.7+10,,.3 $ MASSLESS BEAMS
+PSHELL  21      31      .05     31
+PBEAM   15      32      .001    .0005   .0005
+$       FIX ONE EDGE
+SPC1    102     123456  1       2       3
+$ END COMMON DATA FROM DECK D24D60
+EIGR,303,MGIV,,1000.,,,,,+EIG
++EIG    MASS
+$param,methcmrs,2
+$eigrl,2,,,6
+SPOINT,101,THRU,112
+$ GEN. COORDS. DEFINED ON SCALAR POINTS
+QSET1,0,101,THRU,112
+$ PLACE GENERALIZED COORDINATES IN THE Q-SET
+ASET1,0,101 $ AT LEAST ONE A-SET POINT REQUIRED TO FORM ON O-SET
+ENDDATA

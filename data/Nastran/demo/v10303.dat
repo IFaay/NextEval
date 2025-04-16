@@ -1,0 +1,33 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10303.DAT
+$ *1    15-JUN-1990 16:41:53 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10303.DAT
+ID MSC, V10303   $
+$ID MSC, V0303 $ JRH 4-AUG-81
+$ SOL 3
+SOL 103
+TIME 5
+CEND
+TITLE=TORSIONAL VIBRATION OF A SHAFT WITH THREE DISKS          V10303
+SUBTITLE=HURTY AND RUBINSTEIN, DYNAMICS OF STRUCTURES;  PP. 117
+DISPLACEMENT=ALL
+METHOD=10
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.0     0.0     0.0             123456
+GRID    2               -10.00  0.0     0.0             12356
+GRID    3               -20.00  0.0     0.0             12356
+GRID    4               -30.00  0.0     0.0             12356
+CBEAM   11      11      1       2               1.0
+CBEAM   12      11      2       3               1.0
+CBEAM   13      11      3       4               1.0
+PBEAM   11      12      1.0     0.5     0.5             1.0
+MAT1    12              4.E+6   0.3
+CONM2   2       2               100.                                    +C1
++C1     10.
+CONM2   3       3               100.                                    +C2
++C2     10.
+CONM2   4       4               100.                                    +C3
++C3     10.
+EIGR    10      MGIV                            3                       +E1
++E1     MASS
+ENDDATA

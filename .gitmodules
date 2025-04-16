@@ -1,0 +1,3 @@
+[submodule "dependency/11thSPE-CSP"]
+	path = dependency/11thSPE-CSP
+	url = https://github.com/Simulation-Benchmarks/11thSPE-CSP

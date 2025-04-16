@@ -1,0 +1,53 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10309S.DAT
+$ *1    15-JUN-1990 16:42:07 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10309S.DAT
+ID MSC, V10309S  $
+$ID MSC, V6302S $ JRH 29-JULY-81
+$SOL 63
+SOL 103
+TIME 10
+CEND
+TITLE=MODES OF A FIXED CIRCULAR PLATE                          V10309S
+SUBTITLE=TIMOSHENKO AND YOUNG, VIBRATION PROBLEMS IN ENGINEERING; P. 501
+SEALL=ALL
+SPC = 20
+METHOD=10
+DISP=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CORD2C  10              0.0     0.0     0.0     0.0     0.0     10.0    +C10
++C10    10.0
+GRID    1               0.0     0.0     0.0             12456
+GRID    2       10      0.5     0.0     0.0     10      46
+=       *(4)    =       *(.5)   ==$
+=(5)    $
+GRID    3       10      0.5     30.0    0.0     10      46
+=       *(4)    =       *(.5)   ==$
+=(5)    $
+GRID    4       10      0.5     60.0    0.0     10      46
+=       *(4)    =       *(.5)   ==$
+=(5)    $
+GRID    5       10      0.5     90.0    0.0     10      46
+=       *(4)    =       *(.5)   ==$
+=(5)    $
+CQUAD4  111     101     2       3       7       6
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)    $
+=(4)    $
+CQUAD4  121     101     3       4       8       7
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)    $
+=(4)    $
+CQUAD4  131     101     4       5       9       8
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)    $
+=(4)    $
+CTRIA3  101     101     1       2       3
+CTRIA3  102     101     1       3       4
+CTRIA3  103     101     1       4       5
+PSHELL  101     102     0.125   102
+MAT1    102     30.+6           0.3     0.30
+PARAM   WTMASS  .002588
+EIGR    10      MGIV                            3                       +E1
++E1     MASS
+SPC1    20      246     2       6       10      14      18      22
+SPC1    20      246     5       9       13      17      21      25
+SPC1    20      123456  26      27      28      29
+ENDDATA

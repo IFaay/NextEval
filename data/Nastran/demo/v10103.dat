@@ -1,0 +1,34 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10103.DAT
+$ *1    15-JUN-1990 16:40:57 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10103.DAT
+ID MSC, V10103   $
+$ID MSC, V2403 $ TEW 12-FEB-82
+$SOL 24
+SOL 101
+TIME 5
+CEND
+TITLE=TRUSS ANALYSIS WITH THERMAL LOADS                        V10103
+SUBTITLE=REF:PRZEMIENIECKI,THEORY OF MATRIX STRUC. ANAL.; PP. 155
+LOAD=10
+TEMPERATURE(LOAD)=20
+DISPLACEMENT=ALL
+SPCFORCE=ALL
+ELFORCE=ALL
+ELSTRESS=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CONROD  101     3       1       10      1.0
+CONROD  102     4       1       10      .7071068
+CONROD  103     1       2       10      1.0
+CONROD  104     3       2       10      .7071068
+CONROD  105     4       2       10      1.0
+CONROD  106     3       4       10      1.0
+FORCE   10      1       0       1000.   0.      1.      0.
+GRID    1       0       20.     20.     0.              3456
+GRID    2       0       20.     0.      0.              3456
+GRID    3       0       0.      20.     0.              123456
+GRID    4       0       0.      0.      0.              123456
+MAT1    10      1.0+7           .3      0.0     1.0-6   0.0
+TEMPRB  20      103     100.    100.
+TEMPD   20      0.0
+ENDDATA

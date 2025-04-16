@@ -1,0 +1,58 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D11401S.DAT
+$ *1    15-JUN-1990 16:35:43 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D11401S.DAT
+NASTRAN PREFOPT=2
+ID MSC, D11401S  $
+$ID MSC, D4701S   $
+$ID MSC, ANN1 (D05$71)
+TIME  10
+$SOL  47
+SOL 114
+CEND
+TITLE = BUCKLING OF CIRCULAR ARCH                              D11401S
+SUBTITLE= UNIFORM PRESSURE=1.0
+SET 1 = 0
+SET 2 =1
+SET 5 =1
+HARMONICS=1
+NOUTPUT=2
+LOAD=1
+DISP=ALL
+FORCE=ALL
+STRESS=ALL
+STRAIN=ALL $ ADDED FOR /63
+OLOAD=ALL
+SPCF=ALL
+SUBCASE 1
+LABEL = MEMBRANE  SOLUTION
+SPC=1
+$ LAST MODIFIED 14-JUN-1983
+BEGIN BULK
+EGRID   1       2       90.0    5.00    0.0
+EGRID   2       2       90.0    5.00    10.0    2
+EGRID   3       2       90.0    35.0    10.0
+EGRID   4       2       90.0    35.0    0.0
+GRID    5       0       0.0     0.0     90.00
+GRIDG   1       2               6       -1      -4      -3              +G1
++G1     2       -2
+CGEN    QUAD4   1       1       1
+PSHELL  1       1       3.0     1
+MAT1    1       3.0+6           .167
+CORD2S  2       0       0.0     0.0     0.0     0.0     0.0     1.0     +C2
++C2     1.0     0.0     0.0
+CTRIA3  13      1       5       10000   10100
+CTRIA3  14      1       5       10100   10200
+PLOAD4  5       1       -1.0
+=       =       *(1)    ==  $
+=(12)   $
+SPCG    1       1       2345    0006    0206
+SPCG    2       1       123456  0006    0206
+CYAX    5
+CYSYM   36      ROT
+CYJOIN,1,T3,10000,THRU,10006
+CYJOIN,2,T3,10200,THRU,10206
+LOADCYH 1       1.0     0       C        1.0     5
+PARAM,S1A,1
+PARAM,S1AM,1
+PARAM,S1AG,1
+ENDDATA

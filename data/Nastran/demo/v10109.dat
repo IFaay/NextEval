@@ -1,0 +1,35 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10109.DAT
+$ *1    15-JUN-1990 16:41:20 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10109.DAT
+ID MSC, V10109 $ V66
+$ID MSC, V2409 $ JRH 2-AUG-1982 , MODIF LNA 6NOV87
+TIME 5 $ ABB 28-OCT-88
+SOL 101
+$SOL 24
+CEND
+TITLE = BAR WITH OFFSETS IN SKEWED COORD. SYSTEM  -            V10109
+SUBTITLE = REF: SHIGLEY, MECHANICAL ENGINEERING DESIGN; PP.642
+LOAD=1
+SET 1 = 10,11
+FORCES = 1
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CORD2R  100     0       5.0     5.0     0.0     5.0      5.0    5.0
++       15.0    15.0    0.0
+GRID    1       100     2.0     0.0     0.0     100     1345
+GRID    2       100     3.0     0.0     0.0     100     1345
+GRID    3       100     4.0     0.0     0.0     100     1345
+GRID    4       100     5.0     0.0     0.0     100     1345
+GRID    10      100     2.0     10.0    0.0     100     123456
+CBAR    1       1       1       2       10
++                               2.0                     2.0
+CBAR    2       1       2       3       10
++                               2.0                     2.0
+CBAR    3       1       3       4       10
++                               2.0                     2.0
+PBAR    1       1       .0625   3.255-4
+MAT1    1       3.E+7           .33
+CELAS2  10      1.E+4   1       2
+CELAS2  11      1.E+4   4       2
+PLOAD1  1       2       FYE     FR      0.0     600.
+ENDDATA

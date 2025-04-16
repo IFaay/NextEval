@@ -1,0 +1,33 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10901.DAT
+$ *1    15-JUN-1990 16:42:58 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10901.DAT
+ID MSC, V10901   $
+$ID MSC, V2701 $ TEW 29-JULY-81
+TIME 10
+$SOL 27
+SOL 109
+CEND
+TITLE=TRANSIENT RESPONSE OF ROCKET, DIRECT TIME INTEGRATION -- V10901
+SUBTITLE=PRZEMIENIECKI, THEORY OF MATRIX STRUCTURAL ANALYSIS; PP. 340
+DLOAD=30
+TSTEP=20
+LOADSET=40
+DISPLACEMENT=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.0     0.0     0.0             13456
+GRID    2               0.0     70.     0.0             13456
+GRID    3               0.0     140.    0.0             13456
+CONROD  101     1       2       100     1.0
+CONROD  102     2       3       100     1.0
+MAT1    100     1E+4            .3      0.1
+TLOAD1  30      33      0       0       34
+$LSEQ ADDED FOR MSC/62
+LSEQ    40      33      33
+FORCE   33      1       0       100.    0.0     1.0     0.0
+TSTEP   20      200     0.0125  4
+TABLED1 34                                                              +T1
++T1     0.0     0.0     0.0875  0.0     0.1     1.0     1.1     1.0     +T2
++T2     1.1125  0.0     3.0     0.0     ENDT
+$DAREA, 33      1       2       0.0     $DUMMY DAREA NEED FOR TLOAD1 CARD
+ENDDATA

@@ -1,0 +1,29 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10702.DAT
+$ *1    15-JUN-1990 16:42:51 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10702.DAT
+ID MSC, V10702   $
+$ID MSC, V2802 $ MAG 4-AUG-81
+$SOL DIRECT COMPLEX EIGENVALUES
+SOL 107
+TIME 2
+CEND
+TITLE=ROOTS AS FUNCTION OF GAIN                                V10702
+SUBTITLE=SAVANT,BASIC FEEDBACK CONTROL SYSTEM DESIGN; PP. 81-83
+CMETHOD=1
+BEGIN BULK
+$--- DUMMY GRID TO GET OVER SEP1 FATAL MESSAGE
+GRID    9999            0.0     0.0     0.0             123456
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+SPOINT  1       2       3
+CMASS2, 10      .01     1       $ ONE OVER TIME CONSTANT, TAU
+CMASS2  11      .01     2
+CMASS2  12      .01     3
+CDAMP2, 21      1.0     1       $ VELOCITY TERM
+CDAMP2  22      1.0     2
+CDAMP2  23      1.0     3
+CELAS2, 31      5.0     1       $ UNDER DAMPED
+CELAS2, 32      25.0    2       $ CRITICALLY DAMPED
+CELAS2, 33      50.0    3       $ OVERDAMPED
+EIGC    1       HESS    MAX                                             +EIGC
++EIGC,  ,       ,       ,       ,       ,       ,       6 $ ALL VECTORS
+ENDDATA

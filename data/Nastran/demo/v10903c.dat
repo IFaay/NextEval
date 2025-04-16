@@ -1,0 +1,39 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10903.DAT
+$ *1    15-JUN-1990 16:43:06 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10903.DAT
+id msc, v10903c.dat $ v2002 prp 15-Feb-2002 A00564
+$ID MSC, V10903 $
+$ID MSC, V2703 $ MAG 17-APR-83
+$ID MSC, V27YY $
+$SOL DIRECT TRANSIENT
+SOL 109
+TIME 5
+diag 8,15,41
+CEND
+TITLE=DEMONSTRATE COMBINED LOADS                               V10903
+DLOAD=2
+TSTEP=3
+SET 14=1, 2, 3
+DISP=14
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               50.                             1345
+GRID    2               30.                             1345
+GRID    3               10.                             1345
+GRID    11              40.                             123456
+GRID    12              20.                             123456
+GRID    13              0.                              123456
+CBAR    111     111     1       11              1.0
+CBAR    212     111     2       12              1.0
+CBAR    313     111     3       13              1.0
+PBAR    111     112     1.+4    1.0
+MAT1    112     1.+7                    .1
+DLOAD   2       1.      1.      3       1.      4
+TLOAD2  3       5                       0.1     1.1     1.0     90.
+TLOAD2  4       6       46              0.1     1.1     1.0     90.
+DELAY   46      2       2       0.9     3       2       0.9
+DAREA   5       1       2       1.0     3       2       1.0
+DAREA   6       2       2       1.0     3       2       1.0
+TSTEP,  3,      20,     .10,    1,
+     ,,         20,     .10,    1,
+ENDDATA

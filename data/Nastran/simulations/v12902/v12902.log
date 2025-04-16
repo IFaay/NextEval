@@ -1,0 +1,167 @@
+MSC Nastran V2019.0 (AMD Windows 10 Home China 6.2 9200) Control File: 
+----------------------------------------------------------------- 
+$ sysfield=SCR*(RAW=YES,BUFFIO=YES,wnum=16,wsize=16mb) $(c:/msc.software/msc_nastran/20190/conf/nast20190.rcf[2])
+$ sysfield=DBALL(RAW=YES,BUFFIO=YES,wnum=16,wsize=16mb) $(c:/msc.software/msc_nastran/20190/conf/nast20190.rcf[3])
+Nastran BUFFSIZE=32769 $(c:/msc.software/msc_nastran/20190/conf/nast20190.rcf[6])
+JID='c:/users/sun/desktop/v12902/v12902.dat'
+OUT='./v12902'
+MEM=16022MB      $ 
+MACH='AMD'
+OPER='Windows 10 Home China'
+OSV='6.2 9200'
+MODEL='AMD Ryzen 9 8945HS w/ Radeon 7 (rog)'
+NPROC='16'
+CONFIG=15
+NPROC=16
+symbol=DELDIR='c:/msc.software/msc_nastran/20190/msc20190/nast/del' $(program default)
+symbol=DEMODIR='c:/msc.software/msc_nastran/20190/msc20190/nast/demo' $(program default)
+symbol=LM_NO_SNMP=1 $(c:/msc.software/msc_nastran/20190/conf/nast20190.rcf[10])
+symbol=MKL_INTERFACE_LAYER=ILP64 $(c:/msc.software/msc_nastran/20190/conf/nast20190.rcf[1])
+symbol=SSSALTERDIR='c:/msc.software/msc_nastran/20190/msc20190/nast/sssalter' $(program default)
+symbol=TPLDIR='c:/msc.software/msc_nastran/20190/msc20190/nast/tpl' $(program default)
+SDIR='c:/scratch/v12902.T5012_57'
+DBS='./v12902'
+SCR='no'
+SMEM=100
+BPOOL=4005.6MB
+DMPMEM=estimate
+NEWDEL='c:/msc.software/msc_nastran/20190/msc20190/win64i8/sss'
+DEL='MSCDEF'
+DML=MSCDEF
+SDL=MSCDEF
+AUTH='27500@ROG'
+AUTHQUE=20
+MSGCAT='c:/msc.software/msc_nastran/20190/msc20190/win64i8/analysis.msg'
+MSGDEST='f06'
+NEWS='c:/msc.software/msc_nastran/20190/msc20190/nast/news.txt'
+----------------------------------------------------------------- 
+MSC_ISHELLPATH=C:\MSC.Software\MSC_Nastran\20190\msc20190\actran\win64\Actran_19.0.rc0.115900\bin;C:\MSC.Software\MSC_Nastran\20190\msc20190\nast; 
+MSC_JIDPATH= 
+PATH=c:\msc.software\msc_nastran\20190\msc20190\win64i8;c:\msc.software\msc_nastran\20190\msc20190\win64i8\nCode\bin;c:\msc.software\msc_nastran\20190\msc20190\win64i8\nvidia;c:\msc.software\msc_nastran\20190\msc20190\win64i8\lib;c:\msc.software\msc_nastran\20190\msc20190\win64i8;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files\Neovim\bin;C:\Program Files\CMake\bin;C:\CTEX\UserData\miktex\bin;C:\CTEX\MiKTeX\miktex\bin\x64;C:\CTEX\CTeX\ctex\bin;C:\CTEX\CTeX\cct\bin;C:\CTEX\CTeX\ty\bin;C:\CTEX\Ghostscript\gs10.02.1\bin;C:\CTEX\WinEdt;C:\Users\sun\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\sun\AppData\Local\Programs\Python\Python39\;C:\Program Files\Conan\conan;C:\Users\sun\AppData\Local\Microsoft\WindowsApps;C:\Users\sun\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\sun\AppData\Local\Microsoft\WindowsApps;C:\Users\sun\source\repos\MyUSDProject\third_party\OpenUSD\bin;C:\Users\sun\source\repos\MyUSDProject\third_party\OpenUSD\lib; 
+SCA_SERVICE_CATALOG="c:\msc.software\msc_nastran\20190\msc20190\res\SCAServiceCatalog.xml" 
+SCA_RESOURCE_DIR="c:\msc.software\msc_nastran\20190\msc20190\res" 
+Cmd Line:    C:\MSC.Software\MSC_Nastran\20190\msc20190\win64i8\nastran.exe JID=C:\Users\sun\Desktop\v12902\v12902.dat 
+Current Dir: C:\Users\sun\Desktop\v12902 
+Time Cmd:    c:\msc.software\msc_nastran\20190\msc20190\win64i8\msctime 
+Executable:  c:\msc.software\msc_nastran\20190\msc20190\win64i8\analysis.exe 
+Arch= Kywd:  [Not specified]  
+MSC_MSG:     stderr  
+FPE:         yes  
+----------------------------------------------------------------- 
+Current resource limits:
+ Physical memory:                    32045 MB
+ Physical memory available:          20626 MB
+ Paging file size:                   34093 MB
+ Paging file size available:         21015 MB
+ Virtual memory:                 134217727 MB
+ Virtual memory available:       134213507 MB
+----------------------------------------------------------------- 
+System configuration:
+ Hostname:         rog
+ Architecture:     win64i8
+ Platform:         AMD Windows 10 Home China 6.2 9200 (Windows Compute Cluster)
+ Model:            AMD Ryzen 9 8945HS w/ Radeon 7
+ Clock freq.:      34967 MHz
+ Number of CPUs:   16
+ Executable:       standard
+ Raw model ID:     15
+ Config number:    15
+ Physical memory:  32045 MB
+ Virtual memory:   34093 MB
+ Numeric format:   64-bit little-endian IEEE.
+ Bytes per word:   8
+ Disk block size:  512 bytes (64 words)
+ Remote shell cmd: "c:/msc.software/msc_nastran/20190/msc20190/win64i8/mscrmtcmd.exe" (Windows non-CCS nodes, UNIX)
+                   <ccs_cmd> (Windows CCS nodes)
+----------------------------------------------------------------- 
+MSC Nastran started   
+ 05:59:01  Beginning Analysis
+SCA Kernel 22.2.602065 successfully initialized
+BLAS/LAPACK .dll "c:\msc.software\msc_nastran\20190\msc20190\win64i8\libimalloc.dll" has been loaded.
+BLAS/LAPACK .dll "c:\msc.software\msc_nastran\20190\msc20190\win64i8\mkl_core.dll" has been loaded.
+BLAS/LAPACK .dll "c:\msc.software\msc_nastran\20190\msc20190\win64i8\mkl_intel_thread.dll" has been loaded.
+BLAS/LAPACK .dll "c:\msc.software\msc_nastran\20190\msc20190\win64i8\mkl_rt.dll" has been loaded.
+BLAS/LAPACK .dll "c:\msc.software\msc_nastran\20190\msc20190\win64i8\MSCblas.dll" has been loaded.
+
+ 05:59:04  MSC Authorization Information - System Attributes (1004, 0)
+ 05:59:04  -----------------------------------------------------------
+  Date:          Mon Apr 14 05:59:04 2025
+  MSC Id:        2e98113e6525 (ethernet) (Intel)
+  Hostname:      rog (user sun, display rog)
+  License files: 27500@ROG
+  CEID:          113E4506-2B4374EF
+  User:          sun
+  Display:       rog
+  LAPI Version:  LAPI 10.4.6 (FLEXlm 11.13.1.3)
+
+  * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * *
+  * *                                 * *
+  * *   MSC Customer Entitlement ID   * *
+  * *        113E4506-2B4374EF        * *
+  * *                                 * *
+  * * * * * * * * * * * * * * * * * * * *
+  * * * * * * * * * * * * * * * * * * * *
+
+ 05:59:04  MSC Authorization Information - Checkout Successful (1016, 0)
+ 05:59:04  -------------------------------------------------------------
+ 05:59:04  Acquired 1 license for MSC Nastran from license server on host ROG
+
+
+ 05:59:04  MSC Authorization Information - Checkout Successful (1016, 0)
+ 05:59:04  -------------------------------------------------------------
+ 05:59:04  Acquired 1 license for MSC Nastran Nonlinear from license server on host ROG
+
+
+Beginning bulk data processing using the IFPStar component.
+For more information on IFPStar, please see KB article KB8019200
+on our support pages, at http://simcompanion.mscsoftware.com.
+
+ 05:59:04  120 records read from JID file "c:/users/sun/desktop/v12902/v12902.dat"
+
+Processing of bulk data entries is complete.
+
+ 05:59:05  Analysis started.
+ 05:59:05  Geometry access/verification to CAD part initiated (if needed).
+ 05:59:05  Geometry access/verification to CAD part successfully completed (if needed).
+ 05:59:05  Finite element model generation started.
+ 05:59:05  Finite element model generated 132 degrees of freedom.
+ 05:59:05  Finite element model generation successfully completed.
+ 05:59:05  Application of Loads and Boundary Conditions to the finite element model started.
+ 05:59:05  Application of Loads and Boundary Conditions to the finite element model successfully completed.
+
+ 05:59:05  MSC Authorization Information - Checkout Successful (1016, 0)
+ 05:59:05  -------------------------------------------------------------
+ 05:59:05  Acquired 1 license for MSC Nastran Dynamics from license server on host ROG
+
+ ================================================== 
+ Warning/Fatal Message Summary           Occurrence
+       USER WARNING MESSAGE      979.1          1 
+       USER WARNING MESSAGE      979.1          2 
+ ================================================== 
+ 05:59:06  47 records read from JID file "c:/users/sun/desktop/v12902/v12902.dat"
+ 05:59:06  NSEXIT: EXIT(0)
+ 05:59:06  Analysis complete  0
+Real:        5.338 seconds ( 0:00:05.338)
+User:        0.625 seconds ( 0:00:00.625)
+Sys:         1.375 seconds ( 0:00:01.375)
+ ==================================================
+ OS:              6.2
+ OEM ID:         9
+ Number of processors:         16
+ Page size:         4096
+ Processor type:         8664
+ Minimum application address:         10000
+ Maximum application address:         fffeffff
+ Active processor mask:         65535
+ Nsocket:         0
+ Ncore:           16
+ Ram:          32045 Mb
+ ==================================================
+ Time Summary                 CPU       Wall   ( Time in Seconds )
+ Consider using SOLVE=AUTO if you have not.
+ =====================================================
+ Detailed performance information can be found in the 
+ "MSC Nastran High Performance Computing User's Guide"
+ =====================================================
+MSC Nastran finished  

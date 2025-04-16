@@ -1,0 +1,41 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10701.DAT
+$ *1    15-JUN-1990 16:42:47 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10701.DAT
+ID MSC, V10701   $
+$ID MSC, V2801 $ MAG 22-JULY-81
+TIME 5
+$SOL DIRECT COMPLEX EIGENVALUES
+SOL SEDCEIG $ (SOL 107, V66)
+CEND
+TITLE=EIGENVALUES OF A THREE-BY-THREE MATRIX --  PROB.         V10701
+SUBTITLE=DE RUSSO,ROY,AND CLOSE; STATE VARIABLES FOR ENGS; EX. 4.7-2
+K2PP=A
+M2PP=UNITY
+CMETHOD=1
+SET 100 = 1 THRU 3
+ DISPLACEMENT=100
+BEGIN BULK
+PARAM,AUTOSPC,NO
+$--- DUMMY GRID TO GET OVER SEP1 FATAL MESSAGE (SUPERELEMENT LIMITATION)
+GRID    9999            0.0     0.0     0.0             123456
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+SPOINT  1       THRU    3
+DMIG,   A,      0,      1,      1,      0,      $ SQUARE, MACHINE PRECISION
+DMIG    A       1                       1               2.              +
+ ,      2,      ,       1.,     ,       3,      ,       1.,     $ FIRST COL
+DMIG    A       2                       1               -2.             +
+ ,      2,      ,       1.,     ,       3,      ,       3.,
+DMIG    A       3                       1               3.              +
+ ,      2,      ,       1.
+CELAS4, 1,      -1.,    3,      $ PUT IN AT LEAST ONE ELEMENT
+$DMIG,   UNITY,  0,      6,      1,      0,      $ IDENTITY MATRIX
+$=,      =,      1,      ,       ,       1,      ,       1.
+$=,      =,      *(1),   ,       ,       *(1),   ==
+$=(1)
+DMIG    UNITY   0       6       1       0                                       
+DMIG    UNITY   1                       1               1.                      
+DMIG    UNITY   2                       2               1.                      
+DMIG    UNITY   3                       3               1.                      
+EIGC    1       HESS    MAX                                             +
+,       ,       ,       ,       ,       ,       ,       3       $ ALL VECTORS
+ENDDATA

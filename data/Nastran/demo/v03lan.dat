@@ -1,0 +1,36 @@
+ID MSC, V03LAN $  MAG JUL85
+$ID MSC, V03GDR $ MAG   MAR 82
+$ UPDATE FOR VERSION 65
+TIME 10
+$SOL MODES
+SOL 3
+$READ 9 $ RF3D83 LANCZOS METHOD
+$COMPILE DMAP=SOL3,SOUIN=MSCSOU,NOLIST,NOREF
+$RFALTER 'rf3d83'
+CEND
+TITLE= VERIFICATION MANUAL PROBLEM  -   MODIFIED V03GDR        V03LAN
+SUBTITLE= TWENTY CELL BEAM.  FIND FIRST TWO MODES, LANCZOS METHOD
+ECHO=BOTH
+SPC=1002
+METHOD=1
+DISP=ALL
+$DYNRED=1
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    10000           0.0     0.0     0.0             1246
+=       *(1)    =       *(5.)   == $
+=(19)
+CBAR    101     100     10000   10001   0.0     0.0     1.      1
+=       *(1)    =       *(1)    *(1)    == $
+=(18)
+$EIGR    1       GIV             100.                                    +EIG1
+$+EIG1,  MASS $ FIND MODE SHAPES TO 100.0 CYCLES
+EIGRL,  1,      ,       100.
+$DYNRED, 1       100. $ FMAX IS 100. CYCLES
+$QSET1   0       101     THRU    106
+$SPOINT  101     THRU    106
+$ASET1   0       101     THRU    106
+PBAR    100     1000    0.31416 0.15708
+MAT1    1000    3.+7            .3      7.764-4
+SPC     1002    10020   3               10000   3
+ENDDATA

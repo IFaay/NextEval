@@ -1,0 +1,28 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V103INV.DAT
+$ *1    15-JUN-1990 16:42:31 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V103INV.DAT
+ID MSC, V103INV $
+$ID MSC, V03INV $ MAG-MAR82, LNA-DEC87
+TIME 30
+SOL 103
+$SOL 3
+CEND
+TITLE= VERIFICATION MANUAL PROBLEM                             V103INV
+SUBTITLE=TWENTY CELL BEAM. INVERSE POWER WITH NO REDUCTION FOR CHECK
+SPC=1002
+METHOD=1
+DISP=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    10000           0.0     0.0     0.0             1246
+=       *(1)    =       *(5.)   == $
+=(19)
+CBAR    101     100     10000   10001   0.0     0.0     1.      1
+=       *(1)    =       *(1)    *(1)    == $
+=(18)
+EIGR    1       INV     0.      100.    20      20                      +EIG1
++EIG1,  MASS $ FIND MODE SHAPES TO 100.0 CYCLES
+PBAR    100     1000    0.31416 0.15708
+MAT1    1000    3.+7            .3      7.764-4
+SPC     1002    10020   3               10000   3
+ENDDATA

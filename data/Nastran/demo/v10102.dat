@@ -1,0 +1,67 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10102.DAT
+$ *2    13-JAN-1994 16:41:16 A_BOYADJIAN "68 PLUS/G/ HEAT TRANSFER CONVERTED DECKS FOR V68 /DCC"
+$ *1    15-JUN-1990 16:40:53 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10102.DAT
+$ DEC/CMS REPLACEMENT HISTORY, ELEMENT V10102.DAT
+$ *1    15-JUN-1990 16:40:53 CMSMGR "66B PLUS/G 66B/ INITIAL INSTALLATION OF DEMO TEST PROBLEMS"
+$ DEC/CMS REPLACEMENT HISTORY, ELEMENT V10102.DAT
+ID MSC, V10102   $
+$ID MSC, V2402 $ WHB 22-JULY-81
+$SOL 24
+SOL 153
+TIME 5
+CEND
+ANALYSIS = HEAT
+NLPARM = 100
+SPC=10
+TITLE=LINEAR STEADY-STATE HEAT TRANSFER FROM A COOLING FIN -   V10102
+SUBTITLE=A.J. CHAPMAN, HEAT TRANSFER; PP. 76, EXAMP. 3.8
+ THERMAL=ALL
+ FLUX=ALL
+BEGIN BULK
+NLPARM, 100
+$.......2.......3.......4.......5.......6.......7.......8.......9.......
+CBEAM   1       10      1       2       10
+CBEAM   2       10      2       3       10
+CBEAM   3       10      3       4       10
+CBEAM   4       10      4       5       10
+CHBDYP  10      1000    LINE                    1       2
+                                        3.141   1.414   1.732
+CHBDYP  20      1000    LINE                    2       3
+                                        3.141   1.414   1.732
+CHBDYP  30      1000    LINE                    3       4
+                                        3.141   1.414   1.732
+CHBDYP  40      1000    LINE                    4       5
+                                        3.141   1.414   1.732
+PHBDY   1000    .1309
+PCONV   1000    2000
+CONV    10      1000                    5000    5000
+CONV    20      1000                    5000    5000
+CONV    30      1000                    5000    5000
+CONV    40      1000                    5000    5000
+GRID    1               0.0
+GRID    2               0.25
+GRID    3               0.50
+GRID    4               0.75
+GRID    5               1.0
+GRID    10                              1.              123456
+MAT4    20      132.
+MAT4    2000                            1.6
+PBEAM   10      20      .001365 1.48E-7 1.48E-7
+SPC     10      1       1       250.
+SPC     10      5000    1       70.
+SPOINT  5000
+$
+$User Information Message: A number of default values are used when certain parameters are not available from the old decks.
+$                          These parameters are given as the follows:
+$CHBDYP  E1=3.141 E2=1.414 E3=1.732
+$PHBDY   D1=1. D2=1.
+$PCONVM  FORM=0 FLAG=1 COEF=1.E-6 EXPR=0. EXPPI=0. EXPPO=0.
+$CONVM   TA1=99999
+$SPC     C1=1
+$MAT4    RHO (DENSITY) = 1.
+$VIEW3D  ICAVITY=1
+$RADCAV  ICAVITY=1 RMAX=0.1
+$RADMTX  ICAVITY=1
+$RADLST  ICAVITY=1 MTXTYP=1
+ENDDATA

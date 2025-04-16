@@ -1,0 +1,33 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10104.DAT
+$ *1    15-JUN-1990 16:41:01 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10104.DAT
+ID MSC, V10104 $ JFC
+$ CONVERTED TO 3-D MODEL, SUPORT REQUIRES 6 DOF WITH SUPERELEMENTS
+$ID MSC, V2404 $ JRH 7-OCT-83
+TIME 5 $ ABB 28-OCT-88
+SOL 101
+$SOL 24
+CEND
+TITLE=STATIC ANALYSIS WITH INERTIA RELIEF -- PROB.             V10104
+SUBTITLE=BRUHN, ANALYSIS AND DESIGN OF FLIGHT VEHICLE STRUCTURES; A4.11
+LOAD=10
+ GPFORCE=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.0     0.0     0.0
+GRID    2               -372.   0.0     40.0
+GRID    3               84.     0.0     -120.0
+CBEAM   5       5       1       2       0.0     1.0
+CBEAM   6       5       1       3       0.0     1.0
+PBEAM   5       7       1.0     2.0     2.0             .1
+SUPORT  1       135246
+MAT1    7       10.+7           .3
+FORCE   10      3               100000. 1.0     0.0     3.0
+CONM2   11      1               258.3342                                +C1
++C1     1.+7            4.+7                    1.+7
+CONM2   12      2               0.4658
+PARAM   GRDPNT  1
+$PARAM   GRDPNT  0 $ CHANGED TO GRDPNT 1 BY JFC, NECESSITATED BY CORRECTION
+$                    OF ERRORS E2301 AND E2302. JAN 9, 1989
+PARAM   INREL   -1
+ENDDATA

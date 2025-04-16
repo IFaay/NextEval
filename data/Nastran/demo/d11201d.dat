@@ -1,0 +1,127 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D11201D.DAT
+$ *2     4-MAR-1991 14:21:28 EC004ABB "67 PLUS/G/ REMOVED DIAG 14"
+$ *1    15-JUN-1990 17:42:30 CMSMGR "66B PLUS/G 66B/ Initial installation of TPL test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D11201D.DAT
+NASTRAN SYSTEM(7)=-1
+ID MSC, D11201D $ DBS=D11201D
+$ Modified 18-Jan-2002 v2002 Pr Pamidi
+$ Velocity output request added - V2012.2 - March 29, 2012 - P. R. Pamidi
+$ID MSC, D31D1 $
+$$$$$$$$                                                                $$$$$$$$
+$
+$       THIS DEMO PROBLEM NEEDS THE FOLLOWING ITEMS
+$
+$       CHKPNT DICTIONARY HAS TO BE SAVED ON DISK OR TAPE FOR DEMO 13
+$       THE NPTP HAS TO BE SAVED ON DISK OR TAPE FOR DEMO 13
+$    ***FOR V66+, SAVE DATABASE INSTEAD OF CHKPNT DICTIONARY AND NPTP.
+$
+$       IF PLOTS ARE TO BE MADE THE PLT2 FILE HAS TO BE AVAILABLE
+$       AND IT HAS TO BE DISPOSED
+$
+$       THE PARAMETER IPU MAYBE REQUIRED IN THE BULK DATA AND
+$       IT IS MACHINE DEPENDENT
+$       ALSO THE FORTRAN UNIT SHOULD HAVE ITS DATA PRINTED IN
+$       ORDER TO CHECK IT
+$
+$$$$$$$$                                                                $$$$$$$$
+$DIAG 8
+$DIAG 13
+$DIAG 14
+$DIAG 16
+$DIAG 19
+$DIAG 14
+$CHKPNT YES
+SOL 112 $
+$SOL 31,0
+TIME  6   $  TIME IN MINUTES FOR IBM/145
+$ ALTER BELOW NOT NEEDED WITH STRUCTURED SOLUTION SEQUENCES (V66+)
+$ALTER 570,570 $ DELETE INPUTT2 OF SPSEL SO IT CAN BE IN BULK
+CEND
+TITLE = MSC/NASTRAN DEMONSTRATION PROBLEM  D-12                D11201D
+SUBTITLE = TRANSIENT RESPONSE OF A BUILDING TO AN EARTHQUAKE
+ECHO = BOTH
+MPC = 1
+SPC = 1
+METHOD = 1
+SDAMPING = 1
+DLOAD = 1
+TSTEP = 1
+SET 1 = 1,7,20
+SET 2 = 1,7
+DISPL(SORT2) = 1
+VELOC(SORT2) = 1
+ACCEL(SORT2) = 2
+SDISPL(SORT1) = ALL
+$ LAST MODIFIED 18-APR-1983
+BEGIN BULK
+$       STANDARD TRANSIENT ANALYSIS DECK
+GRDSET                                                  2346
+GRID    1                               0.
+GRID    2                               5.
+GRID    3                               10.
+GRID    4                               15.
+GRID    5                               20.
+GRID    6                               25.
+GRID    7                               30.
+GRID    8                               35.
+GRID    9                               40.
+GRID    10                              45.
+GRID    11                              50.
+BAROR           1                       1.                      1
+CBAR    1               1       2
+CBAR    2               2       3
+CBAR    3               3       4
+CBAR    4               4       5
+CBAR    5               5       6
+CBAR    6               6       7
+CBAR    7               7       8
+CBAR    8               8       9
+CBAR    9               9       10
+CBAR    10              10      11
+PBAR    1       1       150.    5.0+4                   1.5+5           +PBAR1
++PBAR1                                                                  +PBAR2
++PBAR2  0.5
+MAT1    1       2.+10           0.3     2.0+3
+SPOINT  20
+$       CONSTRAINTS
+MPC     1       11      1       1.0     1       1       -1.0            +MPC
++MPC            20      1       -1.0
+SPC     1       1       5
+$       RESEQUENCE AND PARTITION FOR FASTER DECOMPOSITION
+SEQGP   1       11      2       9       3       7       4       5
+SEQGP   5       3       6       1       7       2       8       4
+SEQGP   9       6       10      8       11      10
+OMIT1   15      2       4       6       8       10
+$       EIGENVALUE ANALYSIS
+SUPORT  1       1
+EIGR    1       INV     4.      9.      3       3                       +EIGR
++EIGR   MASS
+$       DYNAMIC MATRIX ASSEMBLY - MODAL
+TABDMP1 1                                                               +TAB
++TAB    0.      .10     10.     .10     ENDT
+TABLED1 1                                                               +TAB1
++TAB1   .00     0.0     .03     0.5     .06     2.0     .09     4.0     +TAB2
++TAB2   .12     2.0     .15     1.0     .18     1.0     .21     0.0     +TAB3
++TAB3   .24     -2.0    .27     -2.0    .30     1.0     .33     5.0     +TAB4
++TAB4   .36     3.0     .39     0.0     .42     -1.0    ENDT
+CMASS2  1       1.+14   1       1
+TLOAD1  1       1               1       1
+DAREA   1       1       1       1.+14
+$       MODAL DYNAMIC ANALYSIS
+TSTEP   1       30      .015    1
+$       $       $       $       $       $       $       $       $       $
+$ BULK DATA CARDS FOR RESPONSE SPECTRA
+$       CARDS ADDED TO MODAL TRANSIENT RUN FOR RESPONSE SPECTRA
+$  FREQUENCY LIST
+FREQ    1       1.0     2.0     3.0     4.0
+$       FREQUENCY
+FREQ1   3       0.0     1.0     30
+$  DAMPING LIST
+FREQ    2       0.0     0.01    0.02    0.03
+FREQ    4       .0      .02     .04     .06     .08
+$       TABLE TO SELECT RESPONSE SPECTRA OUTPUT POINTS
+DTI     SPSEL   0
+DTI     SPSEL   1       2       1       1       11      ENDREC
+DTI     SPSEL   2       4       3       7       ENDREC
+PARAM   IPU     49
+ENDDATA

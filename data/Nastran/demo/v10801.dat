@@ -1,0 +1,29 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10801.DAT
+$ *1    15-JUN-1990 16:42:54 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10801.DAT
+ID MSC, V10801   $
+$ID MSC, V2601 $ WHB 4-AUG-81
+$SOL 26
+SOL 108
+TIME 10
+CEND
+TITLE=DIRECT FREQUENCY RESPONSE OF A TWO D.O.F. SYSTEM -- PROB V10801
+SUBTITLE=DEN HARTOG, MECHANICAL VIBRATIONS; PP.55
+DLOAD=1
+FREQUENCY=2
+DISPLACEMENT(PHASE,SORT2)=ALL
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.      0.      0.
+GRID    2               10.     0.      0.
+CELAS2  10      333.    1       1       2       1
+CDAMP2  20      28.     1       1       2       1
+CELAS2  100     1.E+12  1       1
+CONM2   200     2               7.764
+DAREA   2       1       1       1.E+12
+RLOAD1  1       2                       3
+TABLED1 3                                                               +TBL1
++TBL1   0.      1.      100.    1.      ENDT
+FREQ1   2       1.04    .001    4
+PARAM   AUTOSPC YES
+ENDDATA

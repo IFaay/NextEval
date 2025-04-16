@@ -1,0 +1,315 @@
+ 
+-------------------------------------------------------------
+                              basic_n
+-------------------------------------------------------------
+ 
+. Setup_Env
+#group bigend_gr
+cp $TPLDIR/bigend.xdb $OUTDIR/; $PROCSDIR/dbc.sh bigend 
+cp $TPLDIR/lttlend.xdb $OUTDIR/; $PROCSDIR/dbc.sh lttlend 
+#endgroup bigend_gr
+$NASTPROC $TPLDIR/bmesh1 out=$OUTDIR/bmesh1 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/bmesh3 out=$OUTDIR/bmesh3 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/bunsym out=$OUTDIR/bunsym prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/bunsymc out=$OUTDIR/bunsymc prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/eli2007 out=$OUTDIR/eli2007 prt=no scr=yes bat=no not=no post="$PROCSDIR/dbc.sh eli2007" 
+# 
+#group link16a_gr
+$NASTPROC $TPLDIR/link16a out=$OUTDIR/link16a prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/link16b out=$OUTDIR/link16b prt=no scr=yes bat=no not=no 
+#endgroup link16a_gr
+$NASTPROC $TPLDIR/nelfrq1 out=$OUTDIR/nelfrq1 prt=no scr=yes bat=no not=no 
+ 
+-------------------------------------------------------------
+                              cc2003a
+-------------------------------------------------------------
+ 
+. Setup_Env
+$NASTPROC $TPLDIR/ab1 out=$OUTDIR/ab1 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/ab2 out=$OUTDIR/ab2 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/ab3 out=$OUTDIR/ab3 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/ab4 out=$OUTDIR/ab4 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/aspcmpc out=$OUTDIR/aspcmpc prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/d08d92 out=$OUTDIR/d08d92 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/efmse5 out=$OUTDIR/efmse5 prt=no scr=yes bat=no not=no mem=16m 
+$NASTPROC $TPLDIR/en103 out=$OUTDIR/en103 prt=no scr=yes bat=no not=no post="$PROCSDIR/dbcpchmv.sh en103" 
+# 
+# 
+$NASTPROC $TPLDIR/en111 out=$OUTDIR/en111 prt=no scr=yes bat=no not=no post="$PROCSDIR/dbcpchmv.sh en111" 
+# 
+# 
+#group extse1a_gr
+$NASTPROC $TPLDIR/extse1a out=$OUTDIR/extse1a prt=no scr=no dbs=$DBSDIR/extse1a bat=no not=no 
+$NASTPROC $TPLDIR/extse1b out=$OUTDIR/extse1b prt=no scr=no dbs=$DBSDIR/extse1b bat=no not=no 
+$NASTPROC $TPLDIR/extse1r out=$OUTDIR/extse1r prt=no scr=yes dbs=$DBSDIR/ bat=no not=no 
+#endgroup extse1a_gr
+#group extse2a_gr
+$NASTPROC $TPLDIR/extse2a out=$OUTDIR/extse2a prt=no scr=no dbs=$DBSDIR/extse2a bat=no not=no 
+$NASTPROC $TPLDIR/extse2b out=$OUTDIR/extse2b prt=no scr=no dbs=$DBSDIR/extse2b bat=no not=no 
+$NASTPROC $TPLDIR/extse2r out=$OUTDIR/extse2r prt=no scr=yes dbs=$DBSDIR/ bat=no not=no 
+#endgroup extse2a_gr
+#group extse3a_gr
+$NASTPROC $TPLDIR/extse3a out=$OUTDIR/extse3a prt=no scr=no dbs=$DBSDIR/extse3a bat=no not=no 
+$NASTPROC $TPLDIR/extse3b out=$OUTDIR/extse3b prt=no scr=no dbs=$DBSDIR/extse3b bat=no not=no 
+$NASTPROC $TPLDIR/extse3r out=$OUTDIR/extse3r prt=no scr=yes dbs=$DBSDIR/ bat=no not=no 
+#endgroup extse3a_gr
+$NASTPROC $TPLDIR/fm109ds out=$OUTDIR/fm109ds prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/fm109nds out=$OUTDIR/fm109nds prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/fm112ds out=$OUTDIR/fm112ds prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/fm112nds out=$OUTDIR/fm112nds prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/namedop2 out=$OUTDIR/namedop2 prt=no scr=yes bat=no not=no post="$PROCSDIR/subcop2.sh " 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+$NASTPROC $TPLDIR/qr101 out=$OUTDIR/qr101 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/qra001 out=$OUTDIR/qra001 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/qrtrp4 out=$OUTDIR/qrtrp4 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/qrtrweld out=$OUTDIR/qrtrweld prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/qrweld out=$OUTDIR/qrweld prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/rvdof out=$OUTDIR/rvdof prt=no scr=yes bat=no not=no 
+#group s6111a_gr
+$NASTPROC $ETLDIR/s6111a out=$OUTDIR/s6111a prt=no scr=no dbs=$DBSDIR/s6111a bat=no not=no 
+$NASTPROC $ETLDIR/s6111ar out=$OUTDIR/s6111ar prt=no scr=no dbs=$DBSDIR/s6111a bat=no not=no 
+#endgroup s6111a_gr
+#group s6111b_gr
+$NASTPROC $ETLDIR/s6111b out=$OUTDIR/s6111b prt=no scr=no dbs=$DBSDIR/s6111b bat=no not=no 
+$NASTPROC $ETLDIR/s6111br out=$OUTDIR/s6111br prt=no scr=no dbs=$DBSDIR/s6111b bat=no not=no 
+#endgroup s6111b_gr
+#group s6111c_gr
+$NASTPROC $ETLDIR/s6111c out=$OUTDIR/s6111c prt=no scr=no dbs=$DBSDIR/s6111c bat=no not=no 
+$NASTPROC $ETLDIR/s6111cr out=$OUTDIR/s6111cr prt=no scr=no dbs=$DBSDIR/s6111c bat=no not=no 
+#endgroup s6111c_gr
+#group s6111d_gr
+$NASTPROC $ETLDIR/s6111d out=$OUTDIR/s6111d prt=no scr=no dbs=$DBSDIR/s6111d bat=no not=no 
+$NASTPROC $ETLDIR/s6111dr out=$OUTDIR/s6111dr prt=no scr=no dbs=$DBSDIR/s6111d bat=no not=no 
+#endgroup s6111d_gr
+# 
+$NASTPROC $ETLDIR/set_2004 out=$OUTDIR/set_2004 prt=no scr=yes bat=no not=no post="$PROCSDIR/set04op2.sh" 
+$NASTPROC $TPLDIR/tdbview out=$OUTDIR/tdbview prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/thbuck out=$OUTDIR/thbuck prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/tr101 out=$OUTDIR/tr101 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/tra001 out=$OUTDIR/tra001 prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/trel out=$OUTDIR/trel prt=no scr=yes bat=no not=no 
+#group v10903a_gr
+$NASTPROC $DEMODIR/v10903a out=$OUTDIR/v10903a prt=no scr=no dbs=$DBSDIR/v10903a bat=no not=no 
+$NASTPROC $DEMODIR/v10903ar out=$OUTDIR/v10903ar prt=no scr=no dbs=$DBSDIR/v10903a bat=no not=no 
+#endgroup v10903a_gr
+#group v10903b_gr
+$NASTPROC $DEMODIR/v10903b out=$OUTDIR/v10903b prt=no scr=no dbs=$DBSDIR/v10903b bat=no not=no 
+$NASTPROC $DEMODIR/v10903br out=$OUTDIR/v10903br prt=no scr=no dbs=$DBSDIR/v10903b bat=no not=no 
+#endgroup v10903b_gr
+#group v10903c_gr
+$NASTPROC $DEMODIR/v10903c out=$OUTDIR/v10903c prt=no scr=no dbs=$DBSDIR/v10903c bat=no not=no 
+$NASTPROC $DEMODIR/v10903cr out=$OUTDIR/v10903cr prt=no scr=no dbs=$DBSDIR/v10903c bat=no not=no 
+#endgroup v10903c_gr
+#group v10903d_gr
+$NASTPROC $DEMODIR/v10903d out=$OUTDIR/v10903d prt=no scr=no dbs=$DBSDIR/v10903d bat=no not=no 
+$NASTPROC $DEMODIR/v10903dr out=$OUTDIR/v10903dr prt=no scr=no dbs=$DBSDIR/v10903d bat=no not=no 
+#endgroup v10903d_gr
+$NASTPROC $TPLDIR/vthick out=$OUTDIR/vthick prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/xympcfsl out=$OUTDIR/xympcfsl prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/zcrbuck out=$OUTDIR/zcrbuck prt=no scr=yes bat=no not=no 
+$NASTPROC $TPLDIR/zcrbuck1 out=$OUTDIR/zcrbuck1 prt=no scr=yes bat=no not=no 
+ 
+-------------------------------------------------------------
+                              demo1_n
+-------------------------------------------------------------
+ 
+. Setup_Env
+$NASTPROC $DEMODIR/d0307 out=$OUTDIR/d0307 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d07d2 out=$OUTDIR/d07d2 prt=no scr=yes bat=no not=no 
+#group d10101d_gr
+$NASTPROC $DEMODIR/d10101d out=$OUTDIR/d10101d prt=no scr=no dbs=$DBSDIR/d10101d bat=no not=no 
+$NASTPROC $DEMODIR/d10102r out=$OUTDIR/d10102r prt=no scr=no dbs=$DBSDIR/d10101d bat=no not=no 
+#endgroup d10101d_gr
+$NASTPROC $DEMODIR/d10134 out=$OUTDIR/d10134 prt=no scr=yes bat=no not=no 
+#group d10138d_gr
+$NASTPROC $DEMODIR/d10138d out=$OUTDIR/d10138d prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+$NASTPROC $DEMODIR/d10139r out=$OUTDIR/d10139r prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+$NASTPROC $DEMODIR/d10140r out=$OUTDIR/d10140r prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+#endgroup d10138d_gr
+$NASTPROC $DEMODIR/d10139 out=$OUTDIR/d10139 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10140 out=$OUTDIR/d10140 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10160 out=$OUTDIR/d10160 prt=no scr=yes bat=no not=no 
+#group d10306d_gr
+$NASTPROC $DEMODIR/d10306d out=$OUTDIR/d10306d prt=no scr=no dbs=$DBSDIR/d10306d bat=no not=no 
+$NASTPROC $DEMODIR/d11207r out=$OUTDIR/d11207r prt=no scr=no dbs=$DBSDIR/d10306d bat=no not=no 
+$NASTPROC $DEMODIR/d10370d out=$OUTDIR/d10370d prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+$NASTPROC $DEMODIR/d10371r out=$OUTDIR/d10371r prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+$NASTPROC $DEMODIR/d10372r out=$OUTDIR/d10372r prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+#endgroup d10306d_gr
+#group d10307_gr
+$NASTPROC $DEMODIR/d10307 out=$OUTDIR/d10307 prt=no scr=no dbs=$DBSDIR/d10307 bat=no not=no 
+$NASTPROC $DEMODIR/d10307r out=$OUTDIR/d10307r prt=no scr=no dbs=$DBSDIR/d10307 bat=no not=no 
+#endgroup d10307_gr
+$NASTPROC $DEMODIR/d10504 out=$OUTDIR/d10504 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10701 out=$OUTDIR/d10701 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10702 out=$OUTDIR/d10702 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10703 out=$OUTDIR/d10703 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d11401s out=$OUTDIR/d11401s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d11402s out=$OUTDIR/d11402s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd10101 out=$OUTDIR/hd10101 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15301 out=$OUTDIR/hd15301 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15302 out=$OUTDIR/hd15302 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15303 out=$OUTDIR/hd15303 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15304 out=$OUTDIR/hd15304 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15305 out=$OUTDIR/hd15305 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15306 out=$OUTDIR/hd15306 prt=no scr=yes bat=no not=no 
+#group hd15901_gr
+$NASTPROC $DEMODIR/hd15901 out=$OUTDIR/hd15901 prt=no scr=no dbs=$DBSDIR/hd15901 bat=no not=no post="$PROCSDIR/psplot.sh hd15901" 
+$NASTPROC $DEMODIR/hd15902 out=$OUTDIR/hd15902 prt=no scr=no dbs=$DBSDIR/hd15901 bat=no not=no 
+#endgroup hd15901_gr
+# 
+$NASTPROC $DEMODIR/hd15903 out=$OUTDIR/hd15903 prt=no scr=yes bat=no not=no 
+ 
+-------------------------------------------------------------
+                              demo1_n
+-------------------------------------------------------------
+ 
+. Setup_Env
+$NASTPROC $DEMODIR/d0307 out=$OUTDIR/d0307 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d07d2 out=$OUTDIR/d07d2 prt=no scr=yes bat=no not=no 
+#group d10101d_gr
+$NASTPROC $DEMODIR/d10101d out=$OUTDIR/d10101d prt=no scr=no dbs=$DBSDIR/d10101d bat=no not=no 
+$NASTPROC $DEMODIR/d10102r out=$OUTDIR/d10102r prt=no scr=no dbs=$DBSDIR/d10101d bat=no not=no 
+#endgroup d10101d_gr
+$NASTPROC $DEMODIR/d10134 out=$OUTDIR/d10134 prt=no scr=yes bat=no not=no 
+#group d10138d_gr
+$NASTPROC $DEMODIR/d10138d out=$OUTDIR/d10138d prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+$NASTPROC $DEMODIR/d10139r out=$OUTDIR/d10139r prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+$NASTPROC $DEMODIR/d10140r out=$OUTDIR/d10140r prt=no scr=no dbs=$DBSDIR/d10138d bat=no not=no 
+#endgroup d10138d_gr
+$NASTPROC $DEMODIR/d10139 out=$OUTDIR/d10139 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10140 out=$OUTDIR/d10140 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10160 out=$OUTDIR/d10160 prt=no scr=yes bat=no not=no 
+#group d10306d_gr
+$NASTPROC $DEMODIR/d10306d out=$OUTDIR/d10306d prt=no scr=no dbs=$DBSDIR/d10306d bat=no not=no 
+$NASTPROC $DEMODIR/d11207r out=$OUTDIR/d11207r prt=no scr=no dbs=$DBSDIR/d10306d bat=no not=no 
+$NASTPROC $DEMODIR/d10370d out=$OUTDIR/d10370d prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+$NASTPROC $DEMODIR/d10371r out=$OUTDIR/d10371r prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+$NASTPROC $DEMODIR/d10372r out=$OUTDIR/d10372r prt=no scr=no dbs=$DBSDIR/d10370d bat=no not=no 
+#endgroup d10306d_gr
+#group d10307_gr
+$NASTPROC $DEMODIR/d10307 out=$OUTDIR/d10307 prt=no scr=no dbs=$DBSDIR/d10307 bat=no not=no 
+$NASTPROC $DEMODIR/d10307r out=$OUTDIR/d10307r prt=no scr=no dbs=$DBSDIR/d10307 bat=no not=no 
+#endgroup d10307_gr
+$NASTPROC $DEMODIR/d10504 out=$OUTDIR/d10504 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10701 out=$OUTDIR/d10701 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10702 out=$OUTDIR/d10702 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d10703 out=$OUTDIR/d10703 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d11401s out=$OUTDIR/d11401s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/d11402s out=$OUTDIR/d11402s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd10101 out=$OUTDIR/hd10101 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15301 out=$OUTDIR/hd15301 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15302 out=$OUTDIR/hd15302 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15303 out=$OUTDIR/hd15303 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15304 out=$OUTDIR/hd15304 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15305 out=$OUTDIR/hd15305 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/hd15306 out=$OUTDIR/hd15306 prt=no scr=yes bat=no not=no 
+#group hd15901_gr
+$NASTPROC $DEMODIR/hd15901 out=$OUTDIR/hd15901 prt=no scr=no dbs=$DBSDIR/hd15901 bat=no not=no post="$PROCSDIR/psplot.sh hd15901" 
+$NASTPROC $DEMODIR/hd15902 out=$OUTDIR/hd15902 prt=no scr=no dbs=$DBSDIR/hd15901 bat=no not=no 
+#endgroup hd15901_gr
+# 
+$NASTPROC $DEMODIR/hd15903 out=$OUTDIR/hd15903 prt=no scr=yes bat=no not=no 
+ 
+-------------------------------------------------------------
+                              verif_n
+-------------------------------------------------------------
+ 
+. Setup_Env
+$NASTPROC $DEMODIR/v03lan out=$OUTDIR/v03lan prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v0502a out=$OUTDIR/v0502a prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10101 out=$OUTDIR/v10101 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10102 out=$OUTDIR/v10102 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10103 out=$OUTDIR/v10103 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10104 out=$OUTDIR/v10104 prt=no scr=yes bat=no not=no 
+#group v10105d_gr
+$NASTPROC $DEMODIR/v10105d out=$OUTDIR/v10105d prt=no scr=no dbs=$DBSDIR/v10105d bat=no not=no 
+$NASTPROC $DEMODIR/v10305r out=$OUTDIR/v10305r prt=no scr=no dbs=$DBSDIR/v10105d bat=no not=no 
+#endgroup v10105d_gr
+$NASTPROC $DEMODIR/v10106 out=$OUTDIR/v10106 prt=no scr=yes bat=no not=no 
+#group v10107_gr
+$NASTPROC $DEMODIR/v10107 out=$OUTDIR/v10107 prt=no scr=yes bat=no not=no post="$PROCSDIR/pchmv.sh v10107" 
+# 
+#endgroup v10107_gr
+$NASTPROC $DEMODIR/v10108 out=$OUTDIR/v10108 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10109 out=$OUTDIR/v10109 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10110 out=$OUTDIR/v10110 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10111 out=$OUTDIR/v10111 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10112 out=$OUTDIR/v10112 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10112s out=$OUTDIR/v10112s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10113s out=$OUTDIR/v10113s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10301 out=$OUTDIR/v10301 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10302 out=$OUTDIR/v10302 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10303 out=$OUTDIR/v10303 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10307 out=$OUTDIR/v10307 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10308s out=$OUTDIR/v10308s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10309s out=$OUTDIR/v10309s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10310s out=$OUTDIR/v10310s prt=no scr=yes bat=no not=no 
+#group v10311d_gr
+$NASTPROC $DEMODIR/v10311d out=$OUTDIR/v10311d prt=no scr=no dbs=$DBSDIR/v10311d bat=no not=no 
+$NASTPROC $DEMODIR/v10311r out=$OUTDIR/v10311r prt=no scr=no dbs=$DBSDIR/v10311d bat=no not=no 
+#endgroup v10311d_gr
+$NASTPROC $DEMODIR/v103gdr out=$OUTDIR/v103gdr prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v103guy out=$OUTDIR/v103guy prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v103inv out=$OUTDIR/v103inv prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v103lan out=$OUTDIR/v103lan prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10501 out=$OUTDIR/v10501 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10601s out=$OUTDIR/v10601s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10603s out=$OUTDIR/v10603s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10701 out=$OUTDIR/v10701 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10702 out=$OUTDIR/v10702 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10801 out=$OUTDIR/v10801 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10901 out=$OUTDIR/v10901 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10902 out=$OUTDIR/v10902 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10903 out=$OUTDIR/v10903 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v10904 out=$OUTDIR/v10904 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v11001 out=$OUTDIR/v11001 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v11101 out=$OUTDIR/v11101 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v11201 out=$OUTDIR/v11201 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v11401 out=$OUTDIR/v11401 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v11501 out=$OUTDIR/v11501 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v12901 out=$OUTDIR/v12901 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v12902 out=$OUTDIR/v12902 prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v14501q out=$OUTDIR/v14501q prt=no scr=yes bat=no not=no post="$PROCSDIR/psplot.sh v14501q" 
+# 
+$NASTPROC $DEMODIR/v15301s out=$OUTDIR/v15301s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v15901s out=$OUTDIR/v15901s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v15902s out=$OUTDIR/v15902s prt=no scr=yes bat=no not=no 
+$NASTPROC $DEMODIR/v2408a out=$OUTDIR/v2408a prt=no scr=yes bat=no not=no 
+ 
+-------------------------------------------------------------
+                              cc2003a
+-------------------------------------------------------------
+. Setup_Env
+#group v10903a_gr
+$NASTPROC $DEMODIR/v10903a out=$OUTDIR/v10903a prt=no scr=no dbs=$DBSDIR/v10903a bat=no not=no 
+$NASTPROC $DEMODIR/v10903ar out=$OUTDIR/v10903ar prt=no scr=no dbs=$DBSDIR/v10903a bat=no not=no 
+#endgroup v10903a_gr
+#group v10903b_gr
+$NASTPROC $DEMODIR/v10903b out=$OUTDIR/v10903b prt=no scr=no dbs=$DBSDIR/v10903b bat=no not=no 
+$NASTPROC $DEMODIR/v10903br out=$OUTDIR/v10903br prt=no scr=no dbs=$DBSDIR/v10903b bat=no not=no 
+#endgroup v10903b_gr
+#group v10903c_gr
+$NASTPROC $DEMODIR/v10903c out=$OUTDIR/v10903c prt=no scr=no dbs=$DBSDIR/v10903c bat=no not=no 
+$NASTPROC $DEMODIR/v10903cr out=$OUTDIR/v10903cr prt=no scr=no dbs=$DBSDIR/v10903c bat=no not=no 
+#endgroup v10903c_gr
+#group v10903d_gr
+$NASTPROC $DEMODIR/v10903d out=$OUTDIR/v10903d prt=no scr=no dbs=$DBSDIR/v10903d bat=no not=no 
+$NASTPROC $DEMODIR/v10903dr out=$OUTDIR/v10903dr prt=no scr=no dbs=$DBSDIR/v10903d bat=no not=no 
+ 
+-------------------------------------------------------------
+                              dra
+-------------------------------------------------------------
+. Setup_Env
+#group eli705_gr
+$NASTPROC $DEMODIR/eli705 out=$OUTDIR/eli705 prt=no scr=no dbs=out/ bat=no not=no post="$PROCSDIR/wkg_dball.sh eli705" 
+# 
+#endgroup eli705_gr

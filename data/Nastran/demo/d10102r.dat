@@ -1,0 +1,93 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10102R.DAT
+$ *1    15-JUN-1990 16:33:02 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10102R.DAT
+RESTART $ RESTART FROM D10101D, DBS=D10101D
+ID MSC, D10102R  $
+$ID MSC, D2402O   $
+$ID MSC, D24D1B $
+TIME 5
+$SOL 24
+SOL 101 $
+$READ 10 $ D2401N
+CEND
+TITLE = STATIC ANALYSIS OF A THREE PANEL TRUSS                 D10102R
+SUBTITLE = BAR,BEAM,CONROD,ROD,AND TUBE ELEMENTS, RESTART FROM D2401N
+ECHO=BOTH
+        MPC = 100
+        SPC = 400
+SET 500 = 1 THRU 9 $ ESE - ROD
+SET 501 = 1 THRU 6 $ GPFDR - ROD
+SET 510 = 11 THRU 19 $ ESE - ROD
+SET 511 = 11 THRU 16 $ GPFDR - ROD
+SET 520 = 31 THRU 39 $ ESE - TUBE
+SET 521 = 31 THRU 36 $ GPFDR - TUBE
+SET 530 = 41 THRU 49 $ ESE - CONROD
+SET 531 = 41 THRU 46 $ GPFDR - CONROD
+SET 540 = 61 THRU 69 $ ESE - BAR
+SET 541 = 61 THRU 66 $ GPFDR - BAR
+SET 550 = 211 THRU 219 $ ESE - BEAM
+SET 551 = 211 THRU 216 $ GPFDR - BEAM
+SUBCASE 1
+        LABEL = LOADING ON MODEL A
+        DEFORM = 601
+        ESE = 500
+        DISP = 501
+SUBCASE 2
+        LABEL = LOADING ON MODEL B
+        LOAD = 602
+        ESE = 510
+        ELFORCE = 510
+        GPFORCE = 511
+        SPCF = 511
+        DISP = 511
+SUBCASE 3
+        LABEL = LOADING ON MODEL C
+        LOAD = 603
+        ESE = 520
+        ELFO = 520
+        GPFORCE = 521
+        SPCF = 521
+        DISP = 521
+SUBCASE 4
+        LABEL = LOADING ON MODEL D
+        LOAD = 604
+        DEFORM = 6041
+        ESE = 530
+        ELFORCE = 530
+        GPFORCE = 531
+        SPCF = 531
+        DISP = 531
+SUBCASE 5
+        LABEL = LOADING ON MODEL E
+        LOAD = 605
+        ESE = 540
+        ELFORCE = 540
+        GPFORCE = 541
+        SPCF = 541
+        DISP = 541
+SUBCASE 6
+        LABEL = LOADING ON MODEL F
+        LOAD = 606
+        ESE = 550
+        ELFORCE = 550
+        GPFORCE = 551
+        SPCF = 551
+        DISP = 551
+BEGIN BULK
+$ ADDITIONAL BULK DATA FOR D2402O FOR RESTART
+DEFORM  601     1       36.0
+FORCE1  602     13      150.    12      13
+FORCE1  602     15      -150.   12      13
+FORCE   603     34      2       150.    1.0
+FORCE1  603     34      150.    35      32
+SPCD    604     44      2       -18.0
+FORCE1  604     44      150.    45      42
+DEFORM  6041    41      36.0
+FORCE   605     64      2       150.    1.0
+FORCE1  605     64      150.    65      62
+PLOAD1  605     66      MZ      LE      90.     1000.
+FORCE   606     214     2       150.    1.0
+FORCE1  606     214     150.    215     212
+MOMENT2 606     215     1000.   214     215     214     212
+PLOAD1  606     216     MZ      LE      90.     1000.
+ENDDATA

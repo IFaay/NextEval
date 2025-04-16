@@ -1,0 +1,35 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10113S.DAT
+$ *1    15-JUN-1990 16:41:41 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10113S.DAT
+ID MSC, V10113S  $
+$ID MSC,V9101 $ MG 31SEP81
+$DMIG    UACCEL  0       9       1 $ UPDATED 3/84 FOR MSC/64
+$SOL 91
+SOL 101
+TIME 2
+CEND
+TITLE=VERIFICATION PROBLEM FOR ALTERNATE INERTIA RELIEF,       V10113S
+SEALL=ALL
+DISP=ALL
+SPCF=ALL
+OLOAD=ALL $ WILL PRODUCE NO OUTPUT (NULL APPLIED LOADS)
+GPFORCE=ALL $ WILL PRODUCE INERTIAL LOADS
+BEGIN BULK
+GRID    1               10.
+GRID    2               20.
+GRID    3               30.
+CBAR    12      12      1       2       0.      1.
+CBAR    23      12      2       3       0.      1.
+PBAR    12      21      1.      2.      3.      4.
+MAT1    21      1.+7            .3
+CONM2   11      1               1.0                                     +
+ ,      1.0 $ I11
+CONM2   31      3               1.0                                     +
+ ,      1.0
+$DMIG    UACCEL  0       2       1
+DMIG    UACCEL  0       9       1
+DMIG    UACCEL  1       0               2       3       1.0
+SUPORT  2       123456
+PARAM   GRDPNT  2
+PARAM,INREL,-1
+ENDDATA

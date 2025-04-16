@@ -1,0 +1,32 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10112S.DAT
+$ *1    15-JUN-1990 16:41:38 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10112S.DAT
+ID MSC, V10112S  $
+$ID MSC, V6101S $ MAG 22-JULY-81
+$ MODIFIED 8JUN83 TO REMOVE OMITTED DOF.
+$SOL SUPERELEMENT STATICS
+DIAG 8,56 $
+TIME 10
+SOL 101 $
+CEND
+TITLE=STATIC ANALYSIS OF A PIN JOINTED TRUSS -- V.M. PROB.     V10112S
+SUBTITLE= POPOV, INTR0DUCTION TO MECHANICS OF SOLIDS; PP. 499
+SPC=10
+SEALL=ALL   $ RUN TO COMPLETION
+SUPER=ALL   $ SAME CASE CONTROL STRUCTURE IS USED FOR ALL SUPERELEMENTS
+LOAD=5
+ DISPLACEMENT=ALL
+ ELFORCE=ALL
+$ LAST MODIFIED 14-JUN-1983
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CONROD  1       1       2       5       0.15
+CONROD  2       2       3       5       0.25
+FORCE   5       2       0       3000.   0.      -1.     0.
+GRID    1       0       0.0     36.     0.              1456
+GRID    2       0       48.     0.      0.              3456
+GRID    3       0       0.0     -36.    0.              3456
+MAT1    5       30.+6           .3
+SESET,  1,      1,      $ GRID 1 TO S.E. 1
+SPC1    10      12      1       3
+ENDDATA

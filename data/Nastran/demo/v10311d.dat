@@ -1,0 +1,41 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10311D.DAT
+$ *1    15-JUN-1990 16:42:16 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10311D.DAT
+ID MSC, V10311D $ DBS=V10311D
+$ID MSC,V6304D $ RNC 26SEP84
+$SOL 63
+SOL 103 $
+TIME 10
+CEND
+TITLE=NRL VERIFICATION PROBLEM                                 V10311D
+SUBTITLE=DDAM ANALYSIS
+LABEL=COLD START DECK TO COMPUTE MODES
+$SEALL=ALL $ AUTOMATIC IN V66 WITH STRUCTURED SOLS. -- JFC 20MAY88
+METHOD=100
+DISPL=ALL $ PRINT EIGENVECTORS
+ELFOR=ALL
+$ LAST MODIFIED 18-APR-1985
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID,   1,      ,       0.,     0.,     0.,     ,       345 $ INPUT POINT
+GRID,   2,      ,       100.,   0.,     0.,     ,       345
+GRID,   3,      ,       0.,     100.,   0.,     ,       345
+GRID,   4,      ,       100.,   100.,   0.,     ,       345
+GRID,   5,      ,       200.,   100.,   0.,     ,       345
+GRID,   6,      ,       200.,   200.,   0.,     ,       345
+CBAR,   101,    1,      1,      3,      4
+CBAR,   102,    1,      3,      4,      1
+CBAR,   103,    1,      2,      4,      1
+CBAR,   104,    1,      4,      5,      6
+CBAR,   105,    1,      5,      6,      4
+PBAR,   1,      1,      10.,    1000.,  1000.,  2000.
+MAT1,   1,      30.E6,  ,       .33,    .000725
+RBE2,   106,    1,      126,    2 $ TIE TOGETHER GROUNDED POINTS
+CONM2,  107,    1,      ,       4.E5
+,       ,       ,       ,       ,       ,       2.E8 $ THE LARGE MASS
+ASET1,  12,     3,      THRU,   6
+ASET1,  126,    1
+EIGR,   100,    MGIV,   ,       ,       ,       11
+,       MASS
+SUPORT, 1,      126
+ENDDATA

@@ -1,0 +1,61 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10310S.DAT
+$ *1    15-JUN-1990 16:42:12 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10310S.DAT
+ID MSC, V10310S  $
+$ID MSC, V6303S  $ MTF 16-APR-82
+TIME    5  $ MINUTES
+SOL 103
+$SOL 63 $
+DIAG    8  $ PRINT MATRIX TRAILERS
+CEND
+TITLE = NORMAL MODES OF A FIXED CIRCULAR PLATE IN A FLUID      V10310S
+SUBTITLE = SE MODES,TIMOSHENKO, VIBRATION PROBS IN ENGINEERING, PG.501
+  ECHO  = UNSORT
+  MFLUID = 30
+  SEALL = ALL
+  SPC   = 20
+  METHOD = 10
+  DISPL = ALL
+BEGIN BULK
+CORD2C  10              0.0     0.0     0.0     0.0     0.0     10.0    +C10
++C10    10.0
+GRID    1               0.0     0.0     0.0             6
+GRID    2       10      0.5     0.0     0.0     10      6
+=       *(4)    =       *(.5)   ==
+=(5)
+GRID    3       10      0.5     30.0    0.0     10      6
+=       *(4)    =       *(.5)   ==
+=(5)
+GRID    4       10      0.5     60.0    0.0     10      6
+=       *(4)    =       *(.5)   ==
+=(5)
+GRID    5       10      0.5     90.0    0.0     10      6
+=       *(4)    =       *(.5)   ==
+=(5)
+CTRIA3  101     101     1       2       3
+CTRIA3  102     101     1       3       4
+CTRIA3  103     101     1       4       5
+CQUAD4  111     101     2       3       7       6
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)
+=(4)
+CQUAD4  121     101     3       4       8       7
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)
+=(4)
+CQUAD4  131     101     4       5       9       8
+=       *(1)    =       *(4)    *(4)    *(4)    *(4)
+=(4)
+PSHELL  101     102     0.125   102
+MAT1    102     30.+6           0.3     0.30
+PARAM   WTMASS  .002588
+SPC1    20      45      1
+SPC1    20      4       2       6       10      14      18      22
+SPC1    20      4       5       9       13      17      21      25
+SPC1    20      12345   26      27      28      29
+MFLUID  30                      .0385           20      S       S
+ELIST   20      101     THRU    103
+ELIST   20      111     THRU    116
+ELIST   20      121     THRU    126
+ELIST   20      131     THRU    136
+EIGR    10      MGIV                            6                       +E1
++E1     MASS
+ENDDATA

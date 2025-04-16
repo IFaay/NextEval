@@ -1,0 +1,76 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10360S.DAT
+$ *1    15-JUN-1990 16:34:56 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10360S.DAT
+ID MSC, D10360S  $
+$ Modified 28-May-2005 mar v2005
+$ Modified 27-Feb-2003 mar
+$ Modified 15-sep-1998 mag
+$ID MSC, D6360S $ MAG 9FEB82
+$ID MSC,S03D60 $ BASIC COMPONENT MODES  MG  11 JUN 79
+TIME    50
+$SOL 63
+diag 8,19 $
+SOL 103 $ ,INCL=MSCOBJ $ELEMENT NORMAL MODES $ SOL 63
+compile moders list noref $
+alter 'read.*kxx'(,-1) $
+$ Set tolerance for mass indef. to 1.e-4
+$putsys(-4,60) $ Pre-V70.7 avoidance.  
+putsys(-4,303) $ V70.7+ avoidance.  
+$include 'readbug.v71' $ this alter for diagnostics only.  may be removed
+CEND
+TITLE = DEMONSTRATION PROBLEM, CANTILEVERED PLATE              D10360S
+SUBTITLE = DYNAMIC ANALYSIS, COMPONENT MODES
+ECHO   = BOTH
+SPC    = 102
+DISP   = ALL
+$SEALL  = ALL DEFAULT IN SOL 103
+METHOD = 303
+PARAM,FIXEDB,0 $ RESET DEFAULT
+$param, usetprt, 0
+ SUBCASE 1
+SUPER  = 10,1
+LABEL  = OUTPUT TOTAL SYSTEM EIGENVECTORS FOR SE 10
+ SUBCASE 2
+SUPER  = 20
+LABEL  = OUTPUT FIXED-BOUNDARY EIGENVECTORS FOR SE 20
+PARAM,FIXEDB,-1 $
+ SUBCASE 1000
+BEGIN BULK
+CQUAD4  11      21      1       2       5       4
+CQUAD4  12      21      2       3       6       5
+CQUAD4  13      21      4       5       8       7
+CQUAD4  14      21      5       6       9       8
+CBEAM   15      15      7       10      1
+CBEAM   16      15      9       11      3
+$
+GRID    1
+GRID    2               2.0
+GRID    3               4.0
+GRID    4                       3.0
+GRID    5               2.0     3.0
+GRID    6               4.0     3.0
+GRID    7                       6.0
+GRID    8               2.0     6.0
+GRID    9               4.0     6.0
+GRID    10                      6.0     1.0
+GRID    11              4.0     6.0     1.0
+MAT1,31,7.7+10,,.3,2.8+3,$ AL. KG-NEWT-METERS
+MAT1,32,7.7+10,,.3 $ MASSLESS BEAMS
+PSHELL  21      31      .05     31
+$ NO TORSIONAL PROPERTIES FOR BEAMS
+PBEAM   15      32      .001    .0005   .0005
+$       FIX ONE EDGE
+SPC1    102     123456  1       2       3
+SESET,10,4,7 $ LEFT-HAND EDGE IS IN SE 10
+SESET,20,6,9 $ RIGHT-HAND EDGE IS IN SE 20
+SPOINT,101,THRU,110 $ GEN. COORDS FOR SE 10
+SEQSET1,10,0,101,THRU,110 $ ATTACH, PLACE IN QSET
+SPOINT,201,THRU,210 $ MORE GEN. COORDS, FOR SE 20
+SEQSET1,20,0,201,THRU,210
+$ DLOAD-TYPE DATA FOR SUPERELEMENTS
+$  EIGR CARD FOR NORMAL MODES ANALYSIS IN SUBSEQUENT RUN
+EIGR    303     MGIV                            3                       +EIG
++EIG    MASS
+$ switch to lanczos until other methods have system 66 fix
+$eigrl,	303,	,	,	3
+ENDDATA

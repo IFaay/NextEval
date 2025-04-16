@@ -1,0 +1,42 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10603S.DAT
+$ *1    29-NOV-1990 14:17:43 EC004ABB "67 PLUS/G/ NEW FOR V67 FROM JFC"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10603S.DAT
+ID MSC, V10603S $ CREATED FOR V67 BY JFC -- 28-NOV-1990
+$ID MSC, V6603S $ TEW 31-JULY-81
+SOL 106
+$SOL 66
+TIME 60
+CEND
+TITLE=CANTILEVER BEAM WITH PLASTIC HINGE -- PROB.              V10603S
+SUBTITLE=MENDELSON, PLASTICITY: THEORY + APPLICATION;  PP. 308
+DISPLACEMENT=ALL
+SUBCASE 1
+LOAD=10
+NLPARM=10
+SUBCASE 2
+LOAD=20
+NLPARM=20
+SUBCASE 3
+LOAD=30
+NLPARM=30
+$ LAST MODIFIED 20-AUG-1990
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+PARAM,NLDISP,1
+CBEAM   101     10      1       2       1.      1.      0.
+FORCE   10      2       0       16.     0.      -1.     0.
+FORCE   20      2       0       24.     0.      -1.     0.
+FORCE   30      2       0       25.     0.      -1.     0.
+GRID    1       0       0.0     0.      0.              123456
+GRID    2       0       10.     0.      0.              345
+MAT1    10      10.+6           .3
+MATS1   10              PLASTIC 1.-5    1       1       1.0+4
+NLPARM  10      1               AUTO            10      P
+NLPARM  20      16              SEMIQN          5       W       YES
+NLPARM  30      2               SEMIQN          5       W       YES     +ABC
++ABC                                                                    +DEF
++DEF    0
+PBEAM   10      10      0.1     8.333E-31.0                             +Z1
++Z1     NO      1.0                                                     +Z4
++Z4     0.0     0.0
+ENDDATA

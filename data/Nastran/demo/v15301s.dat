@@ -1,0 +1,80 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V15301S.DAT
+$ *2    14-JUL-1994 13:54:01 G_SITTON "68 PLUS/G/ updated heat transfer problem to version 68"
+$ *1    15-JUN-1990 16:43:37 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V15301S.DAT
+ID MSC, V15301S  $
+$ID MSC, V7401S $ WHB 23-JULY-81
+$SOL 74
+SOL 153
+TIME 5
+DIAG 18
+CEND
+ANALYSIS = HEAT
+NLPARM = 100
+SPC = 10
+TITLE=RADIATION EXCHANGE BETWEEN TWO PANNELS -- PROB.          V15301S
+SUBTITLE=A.J. CHAPMAN, HEAT TRANSFER;  PP.447, EXAMP, 11.4
+TEMPERATURE(init) = 400
+load = 300
+ THERMAL=ALL
+ FLUX=ALL
+BEGIN BULK
+$
+$ USER INFORMATION MESSAGE: The following defaults were assumed for data
+$                           not in earlier versions of MSC/NASTRAN.
+$
+$        CONVM   TA1=99999
+$        CHBDYP  E1=3.141, E2=1.414, E3=1.732
+$        MAT4    RHO (DENSITY)=1.
+$        PCONVM  FORM=0, FLAG=1, COEF=1.E-6, EXPR=0., EXPPI=0., EXPPO=0.
+$        PHBDY   D1=1.0, D2=1.0
+$        SPC     C1=1
+$        RADCAV  ICAVITY=1, RMAX=0.1
+$        RADLST  ICAVITY=1
+$        RADMTX  ICAVITY=1
+$        VIEW3D  ICAVITY=1
+$
+NLPARM  100
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CHBDYG  100             AREA4                   1000                    +
++       1       2       3       4
+CHBDYG  200             AREA4                   2000                    +
++       5       8       7       6
+CQUAD4  10      100     1       2       3       4
+CQUAD4  20      100     5       8       7       6
+GRID    1               0.      0.      0.
+GRID    2               0.      1.0     0.
+GRID    3               0.      1.0     1.0
+GRID    4               0.      0.      1.0
+GRID    5               2.      0.      0.
+GRID    6               2.      1.0     0.
+GRID    7               2.      1.0     1.0
+GRID    8               2.      0.      1.0
+MAT4    200     1.E+20
+PARAM   MAXIT   8
+PARAM   SIGMA   1.714E-9
+PARAM   TABS    460.
+RADM    2000            .7
+RADM    1000            .8
+PSHELL  100     200     .1
+RADLST  1       1       100     200
+RADCAV  1                                               0.1
+RADSET  1
+RADMTX  1       1       0.      1.0
+RADMTX  1       2       0.
+SPC1    10      1       1
+SPC1    10      1       2
+SPC1    10      1       3
+SPC1    10      1       4
+SPC1    10      1       5
+SPC1    10      1       6
+SPC1    10      1       7
+SPCD    300     1       1       500.    2       1       500.
+SPCD    300     3       1       500.    4       1       500.
+SPCD    300     5       1       1000.   6       1       1000.
+SPCD    300     7       1       1000.
+TEMP    400     1       500.    2       500.    3       500.
+TEMP    400     4       500.    5       1000.   6       1000.
+TEMP    400     7       1000.
+TEMPD   400     1000.
+ENDDATA

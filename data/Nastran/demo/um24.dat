@@ -1,0 +1,698 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element UM24.DAT
+$ *2     1-APR-1991 14:26:08 J_CASTRO "67 PLUS/G/ updated for new card images for v67. Work done by LNA/KJW. Stored by JFC."
+$ *1    15-JUN-1990 16:39:32 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element UM24.DAT
+ID MSC, UM24 $ MODIFIED 23-DEC-88
+$ID MSC, UM24V66  $
+SOL 100  $ SOL"USERDMAP"
+$ID MSC, BULK $ LJL 7 SEP 82
+$ MODIFICATIONS : 14-JUN-1983 ; LNA FOR 66 : 5FEB88  ;
+CEND
+TITLE = BULK DATA DECK SUMMARY, SECTION 2.4 OF THE U.M.        UM24
+ECHO=UNSORT
+BEGIN BULK
+$ THIS DECK CONTAINS A SUMMARY OF EACH BULK DATA CARD, FROM SECTION 2.4 OF THE
+$ MSC/NASTRAN USER=S MANUAL. THESE CARD IMAGES MAY BE USED AS "TEMPLATES"
+$ WHEN SETTING UP BULK DATA DECKS.
+$ACMODL INTER   INFOR   FSET    SSET    FSTOL
+$ACOUT  SPL     PREFDB
+$ACSRCE SID     DAREA   DPHASE  DELAY   TC      RHO     B
+$ACTIVE FID     D1      D2      D3      RFID    RD1     RD2     RD3
+$ADUMI  NG      NC      NP      ND      ELNM
+$AEFACT SID     D1      D2      D3      D4      D5      D6      D7
+$AELINK ID      LABLD   LABLI1  CI1     LABLI2  CI2     LABLI3  CI3     +ABC
+$+ABC   LABLI4  CI4     ETC
+$AELIST SID     E1      E2      E3      E4      E5      E6      E7
+$AERO   ACSID   VELOCITYREFC    RHOREF  SYMXZ   SYMXY
+$AEROS  ACSID   RCSID   REFC    REFB    REFS    SYMXZ   SYMXY
+$AESTAT ID      LABEL
+$AESURF ID      LABEL   CID1    ALID1   CID2    ALID2   EFF
+$ASET   ID      C       ID      C       ID      C       ID      C
+$ASET1  C       ID      ID      ID      ID      ID      ID      ID      +ABC
+$+ABC   ID      ID      ID      ETC
+$ASET1  C       ID1     "THRU"  ID2
+$AXIC   H
+$AXIF   CID     G       DRHO    DB      NOSYM   F                       +ABC
+$+ABC   N1      N2      N3      N4      N5      N6      N7      N8
+$AXIF   N1      "THRU"  NI
+$AXIF   N1      "THRU"  NI      "STEP"  NS
+$AXSLOT RHOD    BD      N       WD      MD
+$BAROR          PID                     X1,G0   X2      X3
+$BDYLISTRHO     IDF1    IDF2    IDF3    IDF4    IDF5    IDF6    IDF7    +ABC
+$+ABC   IDF8    ETC
+$BEAMOR         PID                     X1,G0   X2      X3
+$BSET   ID      C       ID      C       ID      C       ID      C
+$BSET1  C       ID      ID      ID      ID      ID      ID      ID      +ABC
+$+ABC   ID      ID      ID      ETC
+$BSET1  C       ID1     "THRU"  ID2
+$CAERO1 EID     PID     CP      NSPAN   NCHORD  LSPAN   LCHORD  IGID    +ABC
+$+ABC   X1      Y1      Z1      X12     X4      Y4      Z4      X43
+$CAERO2 EID     PID     CP      NSB     NINT    LSB     LINT    IGID    +ABC
+$+ABC   X1      Y1      Z1      X12
+$CAERO3 EID     PID     CP      LISTW   LISTC1  LISTC2                  +ABC
+$+ABC   X1      Y1      Z1      X12     X4      Y4      Z4      X43
+$CAERO4 EID     PID     CP      NSPAN   LSPAN                           +ABC
+$+ABC   X1      Y1      Z1      X12     X4      Y4      Z4      X43
+$CAERO5 EID     PID     CP      NSPAN   LSPAN   NTHRY   NTHICK          +ABC
+$+ABC   X1      Y1      Z1      X12     X4      Y4      Z4      X43
+$CAXIF2 EID     IDF1    IDF2            RHO     B
+$CAXIF3 EID     IDF1    IDF2    IDF3            RHO     B
+$CAXIF4 EID     IDF1    IDF2    IDF3    IDF4    RHO     B
+$CBAR   EID     PID     GA      GB      X1,G0   X2      X3      +ABC
+$+ABC   PA      PB      W1A     W2A     W1B     W2B     W3B
+$CBARAO EID     SCALE   X1      X2      X3      X4      X5      X6
+$CBARAO EID     SCALE   NPTS    X1      DELTAX
+$CBARG  FEID    PID     DIR     X1      X2      X3                      +ABC
+$+ABC   PEND    PINT    Z1      Z2      Z3      EIDL    EIDH
+$CBEAM  EID     PID     GA      GB      X1,G0   X2      X3              +ABC
+$+ABC   PA      PB      W1A     W2A     W3A     W1B     W2B     W3B     +DEF
+$+DEF   SA      SB
+$CBEND  EID     PID     GA      GB      X1,G0   X2      X3      GEOM
+$CCONEAX        ID      PID     RA      RB
+$CDAMP1 EID     PID     G1      C1      G2      C2
+$CDAMP2 EID     B       G1      C1      G2      C2
+$CDAMP3 EID     PID     S1      S2
+$CDAMP4 EID     B       S1      S1
+$CDUMI  EID     PID     G1      G2      G3      G4      ETC     GN      +ABC
+$+ABC   A1      A2      ETC                     AN
+$CELAS1 EID     PID     G1      C1      G2      C2
+$CELAS2 EID     K       G1      C1      G2      C2      GE      S
+$CELAS3 EID     PID     S1      S2
+$CELAS4 EID     K       S1      S2
+$CFLUID2        EID     IDF1    IDF2                    RHO     B
+$CFLUID3        EID     IDF1    IDF2    IDF3            RHO     B
+$CFLUID4        EID     IDF1    IDF2    IDF3    IDF4    RHO     B
+$CFTUBE EID     PID     G1      G2
+$CGAP   EID     PID     GA      GB      X1,G0   X2      X3      CID
+$CGEN   TYPE    FEID    PID     FID     DIR     TH      EIDL    EIDH    +ABC
+$+ABC   TA      TB      TC      TD      ZOFFS
+$CGEN   TYPE    FEID    PID     FID     DIR     GEOM    EIDL    EIDH    +ABC
+$+ABC   X1,G0   X2      X3      PEND    PINT    Z1      Z2      Z3
+$CGEN   TYPE    FEID    PID     FID     DIR     OPT     EIDL    EIDH    +ABC
+$+ABC   GA1     GA2     GA3     GA4     V1      V2      V3      IVIEW
+$CHACAB EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12                     +DEF
+$+DEF           G17     G18     G19     G20
+$CHACBR EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12                     +DEF
+$+DEF                   17      G18     G19     G20
+$CHBDY  EID     PID     TYPE    G1      G2      G3      G4      IVIEW   +ABC
+$+ABC   GA1     GA2     GA3     GA4     V1      V2      V3
+$CHEXA  EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12     G13     G14     +DEF
+$+DEF   G15     G16     G17     G18     G19     G20
+$CHEXAI EID     MID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8
+$CHEX20 EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$ABC    G7      G8      G9      G10     G11     G12     G13     G14     +DEF
+$DEF    G15     G16     G17     G18     G19     G20
+$CLOAD  CID     S       S1      IDV1    S2      IDV2    S3      IDV3    +ABC
+$+ABC   S4      IDV4    ETC
+$CMASS1 EID     PID     G1      C1      G2      C2
+$CMASS2 EID     M       G1      C1      G2      C2
+$CMASS3 EID     PID     S1      S2
+$CMASS4 EID     M       S1      S2
+$CNGRNT PEID    CEID1   CEID2   CEID3   CEID4   CEID5   CEID6   CEID7
+$       CEID8   CEID9   ETC
+$CONM1  EID     G       CID     M11     M21     M22     M31     M32     +ABC
+$+ABC   M33     M41     M42     M43     M44     M51     M52     M53     +DEF
+$+DEF   M54     M55     M61     M62     M63     M64     M65     M66
+$CONM2  EID     G       CID     M       X1      X2      X3              +ABC
+$+ABC   I11     I21     I31     I32     I33
+$CONROD EID     G1      G2D     MID     A       J       C       NSM
+$CORD1C CID     G1      G2      G3      CID     G1      G2      G3
+$CORD1R CID     G1      G2      G3      CID     G1      G2      G3
+$CORD1S CID     G1      G2      G3      CID     G1      G2      G3
+$CORD2C CID     RID     A1      A2      A3      B1      B2      B3      +ABC
+$+ABC   C1      C2      C3
+$CORD2R CID     RID     A1      A2      A3      B1      B2      B3      +ABC
+$+ABC   C1      C2      C3
+$CORD2S CID     RID     A1      A2      A3      B1      B2      B3      +ABC
+$+ABC   C1      C2      C3
+$CPENTA EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12     G13     G14     +DEF
+$+DEF   G15
+$CQDMEM EID     PID     G1      G2      G3      G4      TH
+$CQUAD4 EID     PID     G1      G2      G3      G4      THETA   ZOFFS   +ABC
+$+ABC                   T1      T2      T3      T4
+$CQUAD8 EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      T1      T2      T3      T4      THETA   ZOFFS
+$CQUADR EID     PID     G1      G2      G3      G4      THETA           +ABC
+$+ABC                   TI      T2      T3      T4
+$CRAC2D EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12     G13     G14     +DEF
+$+DEF   G15     G16     G17     G18
+$CRAC3D EID     PID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10     G11     G12     G13     G14     +DEF
+$+DEF   G15     G16     G17     G18     G19     G20     G21     G22     +GHI
+$+GHI   G23     G24     G25     G26     G27     G28     G29     G30     +JKL
+$+JKL   G31     G32     G33     G34     G35     G36     G37     G38     +MNO
+$+MNO   G39     G40     G41     G42     G43     G44     G45     G46     +PQR
+$+PQR   G47     G48     G49     G50     G51     G52     G53     G54     +STU
+$+STU   G55     G56     G57     G58     G59     G60     G61     G62     +VWX
+$+VWX   G63     G64
+$CREEP  MID     RT      EXP     FORM    TIDKP   TIDCP   TIDCS   THRESH  +ABC
+$+ABC   TYPE    A       B       C       D       E       F       G
+$CROD   EID     PID     G1      G2
+$CSET   ID      C       ID      C       ID      C       ID      C
+$CSET1  C       G1      G2      G3      G4      G5      G6      G7      +ABC
+$+ABC   G8      G9      ETC
+$CSET1  C       G1      "THRU"  G2
+$CSET1          ALL
+$CSHEAR EID     PID     G1      G2      G3      G4
+$CSLOT3 EID     IDS1    IDS2    IDS3            RHO     B       M
+$CSLOT4 EID     IDS1    IDS2    IDS3    IDS4    RHO     B       M
+$CSUPER SSID    PSID    GP1     GP2     GP3     GP4     GP5     GP6     +ABC
+$+ABC   GP7     GP8
+$CSUPEXTSEID    GP1     GP2     GP3     GP4     GP5     GP6     GP7
+$CSUPEXTSEID    GP1     "THRU"  GP7
+$CTETRA EID     MID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      G10
+$CTRAPRGEID     G1      G2      G3      G4      TH      MID
+$CTRIA3 EID     PID     G1      G2      G3      THETA   ZOFFS           +ABC
+$+ABC                   T1      T2      T3
+$CTRIA6 EID     PID     G1      G2      G3      G4      G5      G6
+$       THETA   ZOFFS   T1      T2      T3
+$CTRIAR EID     PID     G1      G2      G3      THETA                   +ABC
+$+ABC                   T1      T2      T3
+$CTRIARGEID     G1      G2      G3      TH      MID
+$CTRIAX6EID     MID     G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   TH
+$CTRIM6 EID     PID     G1      G2      G3      G4      G5      G6
+$       THETA
+$CTUBE  EID     PID     G1      G2
+$CURVE  FID     DA      DB      GA      GB      G1      G2      G3      +ABC
+$+ABC   G4      G5      G6      ETC
+$CVISC  EID     PID     G1      G2
+$CYAX   G1      G2      G3      G4      G5      G6      G7      G8
+$CYJOIN SIDE    C       G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      ETC
+$CYSUP  GID     C
+$CYSYM  NSEG    STYPE
+$CZXIF2 EID     IDF1    IDF2                    RHO     B
+$DAREA  SID     P       C       A       P       C       A
+$DCONSTRRID     SID1    LALLOW1 UALLOW1 SID2    LALLOW2 UALLOW2         +ABC
+$+ABC           SID3    LALLOW3 UALLOW3 ETC
+$DEFORM SID     EID     D       EID     D       EID     D
+$DEFUSETOLD     NEW     OLD     NEW     OLD     NEW     OLD     NEW
+$DELAY  SID     P       C       T       P       C       T
+$DELETE FID     D1      D2
+$DEQATN EQID                            EQUATION                        +ABC
+$+ABC                           EQUATION CONTINUED
+$DESOBJ RID     NAME    SID     MIN/MAX SEID    FREQ/TIME
+$DESVAR ID      LABEL   XINIT   XLB     XUB
+$DISTORTFID     D1      D2      KEY     RCP     RX1     RX2     RX3
+$DLINK  ID      DDVID   CO      CMULT   IDV1    C1      IDV2    C2      +ABC
+$+ABC   IDV3    C3      ETC
+$DLIST  ID      PID1    PID2    PID3
+$DLOAD  SID     S       S1      L1      S2      L2      S3      L3      +ABC
+$+ABC   S4      L4              ETC
+$DMI    NAME    "0"     FORM    TIN     TOUT            M       N
+$DMI    NAME    J       I1      A(I1,J) A(I1+1,J)       ETC.    I2      +ABC
+$+ABC   A(I2,J)         ETC
+$DMI    NAME    J       I1      A(I1,J) A(I1,J) A(I1,J) A(I1,J) I2
+$DMI    NAME    J       I1      A(I1,J)                 I1      A(I1,J) +ABC
+$+ABC   RRR     1       2       1.0     THRU    10      12      2.0
+$DMIAX  NAME    "0"     IFO     TIN     TOUT
+$DMIAX  NAME    GJ      CJ      NJ                                      +ABC
+$+ABC   GI      CI      NI      XIJ     YIJ
+$DMIG   NAME    "0"     IFO     TIN     TOUT    POLAR           NCOL
+$DMIG   NAME    GJ      CJ              GI      CI      XIJ     YIJ     +ABC
+$+ABC   GI      CI      XIJ     YIJ     GI      CI      XIJ     YIJ
+$DMIG   UACCEL  "0"     "9"     TIN
+$DMIG   UACCEL  L                       GI      CI      XIJ             +ABC
+$+ABC   GI      CI      XIJ             GI      CI      XIJ
+$DOPTPRMAPRCOD  IPRINT  DESMAX  DELP    DPMIN   PTOL    CONV1   CONV2   +ABC
+$+ABC   GMAX    DELB    DELBM   CONVDV  CONVPR  P1      P2              +DEF
+$+DEF   NOVR    NOVI    IOVR1   RVAL1   IOVR2   RVAL2   ETC             +GHI
+$+GHI   IOVI1   IVAL1   IOVI2   IVAL2   ETC
+$DPHASE SID     P       C       TH      P       C       TH
+$DRESPA ID      LABEL   RTYPE   PTYPE   REGION  ATTA    ATTB    DLID
+$DRESPB ID      LABEL   RTYPE   PTYPE   REGION  ATTA    ATTB    DLID
+$DRESPC ID      LABEL   RTYPE   PTYPE   REGION  ATTA    ATTB    DLID
+$DRESP1 ID      LABEL   RTYPE   PTYPE   REGION  ATTA    ATTB    ATT1    +ABC
+$+ABC   ATT2    ETC
+$DRESP2 ID      LABEL   EQID    REGION                                  +ABC
+$+ABC   DESVAR  DVID1   DVID2   DVID3   DVID4   DVID5   DVID6   DVID7   +DEF
+$+DEF           DVID8   ETC                                             +GHI
+$+GHI   DTABLE  CID1    CID2    CID3    CID4    CID5    CID6    CID7    +JKL
+$+JKL           CID8    ETC                                             +MNO
+$+MNO   DRESP1  NR1     NR2     NR3     NR4     NR5     NR6     NR7     +PQR
+$+PQR           NR8     ETC
+$DSCONS DSCID   LABEL   TYPE    ID      COMP    LIMIT   OPT     LAMNO
+$DSCREENID      TYPE    TRS     NSTR
+$DTABLE ID      LABL1   VALU1   LABL2   VALU2   LABL3   VALU3           +ABC
+$+ABC           LABL4   VALU4   LABL5   VALU5   ETC
+$DTI    NAME    "0"     T1      T2      T3      T4      T5      T6      +ABC
+$+ABC   V       V       ETC
+$DTI    NAME    IREC    V       V       V       V       V       V       +ABC
+$+ABC   V       V       V       V       ETC             ENDREC
+$DTI    ESTDATA "0"                                                     +ABC
+$+ABC   KD1     VD1     KD2     VD2             ETC
+$DTI    ESTDATA "1"     "SE"    SEID    K1      V1      K2      V2      +ABC
+$+ABC   K3      V3              ETC
+$DTI    SETREE  "1"     SEUP1   SEDOWN1 SEUP2   SEDOWN2 SEUP3   SEDOWN3 +ABC
+$+ABC   SEUP4   SEDOWN4 SEUP5   SEDOWN5 ETC
+$DTI    SPECSEL RECNO           TYPE    TID1    DAMP1   TID2    DAMP2   +ABC
+$+ABC   TID3    DAMP3   TID4    DAMP4   TID5    DAMP5   ETC
+$DTI    SPECSEL RECNO           TYPE    TID1    DAMP1   TID2    DAMP2
+$DTI    SPSEL   RECNO   DAMPL1  FREQL1  G       G       G       ETC
+$DTI    SPSEL   RECNO+1 DAMPL2  FREQL2  G       G       G       G       +ABC
+$+ABC   G       G       G       G       G       G       G       G
+$DTI    XINDTA  "0"
+$DTI    XINDTA  "1"     B1      C1      B2      C2       ENDREC
+$DTI    XINDTA  "2"     B1      C1      B2      C2       ENDREC
+$DVAR   BID     LABEL   DELTEB  VID     VID     VID     VID     VID     +ABC
+$+ABC   VID     ETC
+$DVGRID DVID    GRID    CID     COEFF   N1      N2      N3
+$DVPREL1ID      TYPE    PID     FID     PMIN    C0                      +ABC
+$+ABC   DVID1   COEF1   DVID2   COEF2   DVISD3  ETC
+$DVPREL2ID      TYPE    PID     FID     PMIN    EQID                    +ABC
+$+ABC   DESVAR  DVID1   DVID2   DVID3   ETC                             +DEF
+$+DEF           DVIDI   ETC                                             +GHI
+$+GHI   DTABLE  CID1    CID2    ETC                                     +JKL
+$+JKL           CIDI    ETC
+$DVPREL3ID      TYPE    PID     LTYPE   PMIN1   PMIN2   CODE            +ABC
+$+ABC   DVID1   VAL1    DVID2   VAL2    ...     ...     DVIDN   VALN
+$DVSET  VID     TYPE    FIELD   PREF    ALPHA   PID1    PID2    PID3    +ABC
+$+ABC   PID4    PID5    ETC
+$DVSET  VID     TYPE    FIELD   PREF    ALPHA   PID     THRU    PID2
+$DVSET  VID     TYPE    FIELD   MIDV            PID1    PID2    PID3
+$DYNRED SID     FMAX    NIRV    NIT     IDIR    NQDES
+$ECHOOFF
+$ECH00N
+$EDGER  FID     D1      G1      D2      G2      G12                     +ABC
+$+ABC   D3      G3      G23     D4      G4      G34                     +DEF
+$+DEF   D5      G5      G45     D6      G6      G56
+$EGRID  ID      CP      X1      X2      X3
+$EIGB   SID     METHOD  L1      L2      NEP     NDP     NDN             +ABC
+$+ABC   NORM    G       C
+$EIGC   SID     METHOD  NORM    G       C       E       ND1             +ABC
+$+ABC   ALPHAA1 OMEGAA1 ALPHAB1 OMEGAB1 L1      NE1     ND1             +DEF
+$+DEF   ALPHAA2 OMEGAA2 ALPHAB2 OMEGAB2 L2      NE2     ND2
+$EIGP   SID     ALPHA   OMEGA   M       ALPHA   OMEGA   M
+$EIGR   SID     METHOD  F1      F2      NE      ND                      +ABC
+$+ABC   NORM    G       C
+$EIGRL  SID     V1      V2      ND      MSGLVL  MAXSET  SHFSCL
+$ELIST  LID     E1      E2      E3      E4      E5      E6      E7      +ABC
+$+ABC   E8      E9      E10     ETC
+$EPOINT ID      ID      ID      ID      ID      ID      ID      ID
+$EPOINT ID1     "THRU"  ID2
+$EQUIV  FID     D1      D2      D3      RFID    RD1     RD2     RD3
+$EQUIV  "AUTO"  CP      AE      WARN
+$ETEMP  SID     G       T       G       T       G       T
+$FLFACT SID     F1      F2      F3      F4      F5      F6      F7
+$FLFACT SID     F1      THRU    FNF     NF      FMID
+$FLSYM  M       S1      S2
+$FLUTTER        SID     METHOD  DENS    MACH    RFREQ   IMETH   NVALUE  EPS
+$FORCE  SID     G       CID     F       N1      N2      N3
+$FORCE1 SID     G       F       G1      G2
+$FORCE2 SID     G       F       G1      G2      G3      G4
+$FORCEAXSID     RID     HID     S       FR      FP      FZ
+$FREEPT IDF             IDP     PHI     IDP     PHI     IDP     PHI
+$FREQ   SID     F       F       F       F       F       F       F
+$       F       F       F       F       F       F       F       F
+$FREQ1  SID     F1      DF      NDF
+$FREQ2  SID     F1      F2      NF
+$FSLIST RHO     IDF1    IDF2    IDF3    IDF4    IDF5    IDF6    IDF7    ABC
+$+BC    IDF8    IDF9    ETC
+$GENEL  EID             UI1     CI1     UI2     CI2     UI3     CI3     +ABC
+$+ABC   UI4     CI4     UI5     CI5     UI6     CI6     UI7     CI7     +DEF
+$+DEF   "UD"            UD1     CD1     UD2     CD2     UD3     CD3     +GHI
+$+GHIU  "K"OR"Z"KZ11    KZ21    KZ31    ETC             KZ22    KZ32    +JKL
+$+JKL   ETC             KZ33    KZ43    ETC                             +MNO
+$+MNO   "S"     S11     S12     ETC             S21     ETC
+$GRAV   SID     CID     G       N1      N2      N3
+$GRDSET         CP                              CD      PS
+$GRID   ID      CP      X1      X2      X3      CD      PS      SEID
+$GRID8  ID                      PHI             CD      PS      IDF
+$GRIDD  FID     D1      D2      D3      RFID    RD1     RD2     RD3     +ABC
+$+ABC   KEY     RCP     RX1     RX2     RX3     CD      PS      SEID
+$GRIDF  ID      R       Z
+$GRIDG  FID     CD/CI   PS      L       GA      GB      GC      SEID    +ABC
+$+ABC   M       GD      N       GE      GF      GG      GH      CI
+$GRIDG  FID     CD/CI   PS      L       GA      GB      GC      SEID    +ABC
+$+ABC   M       GD      N       GE      GF      GG      GH      CI      +DEF
+$+DEF   VA      VB      VC      VD      VE      VF      VG      VH
+$GRIDG  FID     CD/CI   PS      L       BDYS                    SEID    +ABC
+$+ABC   M               N                                       CI      +DEF
+$+DEF   VA      VB      VC      VD      VE      VF      VG      VH
+$GRIDG  FID     CD/CI   PS      L       GA      GB      GC      SEID    +ABC
+$+ABC   M       GD      N       GE      GF      GG      GH      CI      +DEF
+$+DEF   E1(AB)  E2(AB)  E1(BC)  E2(BC)  E1(CD)  E2(CD)  E1(DA)  E2(DA)  +GHI
+$+GHI   E1(EF)  E2(EF)  E1(FG)  E2(FG)  E1(GH)  E2(GH)  E1(HE)  E2(HE)  +JKL
+$+JKL   E1(AE)  E2(AE)  E1(BF)  E2(BF)  E1(CG)  E2(CG)  E1(DH)  E2(DH)
+$GRIDG  FID     CD/CI   PS      TYPE    CFID    L       LS      SEID    +ABC
+$+ABC   M       MS      N       NS                              CI      +DEF
+$+DEF   VA      VB      VC      VD      VE      VF      VG      VH
+$GRIDMODFID     D1      D2      RCD     RPS     RSEID
+$GRIDS  ID      R       Z       W       IDF
+$GRIDU  FID     TYPE    L       M       G1      G2      G3      G4      +ABC
+$+ABC   G5      G6      -etc.-
+$GRIDU  FID     GA      L       LI      M       MI      N       NI
+$GUST   SID     DLOAD   WG      X0      V
+$INSECT FID     D1      D2      GD1     GD2     GD3                     +ABC
+$+ABC   CIDA    G1A     G2A     G3A     CIDB    G1B     G2B     G3B
+$LIST   LID     N1      N2      N3      N4      N5      N6      N7      +ABC
+$+ABC   N8      N9      N10     -etc.-
+$LOAD   SID     S       S1      L1      S2      L2      S3      L3      +ABC
+$+ABC   S4      L4              ETC
+$LOADCYHSID     S       HID     HTYPE   S1      L1      S2      L2
+$LOADCYNSID     S       SEGID   SEGTYPE S1      L1      S2      L2
+$LOADCYTSID     TABLEID LOADSET METHOD  TABLEID LOADSET METHOD
+$LSEQ   SID     DAREA   LID     TID
+$MAREA  G1      G2      G3      G4      FID     D1      D2      D3
+$MAT1   MID     E       G       NU      RHO     A       TREF    GE      +ABC
+$+ABC   ST      SC      SS      MCSID
+$MAT2   MID     G11     G12     G13     G22     G23     G33     RHO     +ABC
+$+ABC   A1      A2      A12     TREF    GE      ST      SC      SS      +DEF
+$+DEF   MCSID
+$MAT3   MID     EX      ETHETA  EZQ     NUXTHETANUTHETAZNUZX    RHO     +ABC
+$+ABC                   GZX     AX      ATHETA  AZ      TREF    GE
+$MAT4   MID     K       CP
+$MAT5   MID     KXX     KXY     KXZ     KYY     KYZ     KZZ     CP
+$MAT8   MID     E1      E2      NU12    G12     G1,Z    G2,Z    RHO     +ABC
+$+ABC   A1      A2      TREF    Xt      Xc      Yt      Yc      S       +DEF
+$+DEF   GE      F12     STRN
+$MAT9   MID     G11     G12     G13     G14     G15     G16     G22     +ABC
+$+ABC   G23     G24     G25     G26     G33     G34     G35     G36     +DEF
+$+DEF   G44     G45     G46     G55     G56     G66     RHO     A1      +GHI
+$+GHI   A2      A3      A4      A5      A6      TREF    GE
+$MAT10  MID     BULK    RHO
+$MATS1  MID     TID     TYPE    B       YF      HR      LIMIT1  LIMIT2
+$       LIMIT2
+$MATT1  MID     R1      R2      R3      R4      R5              R7      +ABC
+$+ABC   R8      R9      R10
+$MATT2  MIDD    R1      R2      R3      R4      R5      R6      R7      +ABC
+$+ABC   R8      R9      R10             R12     R13     R14     R15
+$MATT3  MID     R1      R2      R3      R4      R5      R6      R7      +ABC
+$+ABC                   R10     R11     R12     R13             R15
+$MATT4  MID     T(K)
+$MATT5  MID     T(KXX)  T(KXY)  T(KXZ)  T(KYY)  T(KYZ)  T(KZZ)
+$MATT9  MID     R1      R2      R3      R4      R5      R6      R7      +ABC
+$+ABC   R8      R9      R10     R11     R12     R13     R14     R15     +DEF
+$+DEF   R16     R17     R18     R19     R20     R21     R22     R23     +GHI
+$+GHI   R24     R25     R26     R27     R28             R30
+$MDIM   C       D       C       D       C       D       C       D
+$MESHOFF
+$MSEHON CONT
+$MESHOPTINPUT   LIST    OUTPUT  FOR     STRESS
+$MFLUID SID     CID     ZFS     RHO     ELIST1  ELIST2  PLANE1  PLANE2  +ABC
+$+ABC   RMAX    FMEXACT
+$MFUN   ID      IJ      A       B       C       D       E       F
+$MKAERO1M1      M2      M3      M4      M5      M6      M7      M8      +ABC
+$+ABC   K1      K2      K3      K4      K5      K6      K7      K8
+$MKAER02M1      K1      M2      K2      M3      K3      M4      K4
+$MLINE  G1      G2      FIDA    D1A     D2A     FIDB    D1B     D2B
+$MOMAX  SID     RID     HID     S       MR      MP      MZ
+$MOMENT SID     G       CID     M       N1      N2      N3
+$MOMENT1SID     G       M       G1      G2
+$MOMENT2SID     G       M       G1      G2      G3      G4
+$MPC    SID     G       C       A1      G2      C2      A2              +ABC
+$+ABC           G3      C3      A3      ETC
+$MPCADD SID     S1      S2      S3      S4      S5      S6      S7      +ABC
+$+ABC   S8      S9      ETC
+$MPCAX  SID                             RID1    HID1    C1      A1      +ABC
+$+ABC   RID2    HID2    C2      A2      RID3    HID3    C3      A3
+$MPOINT GID     FID1    D1      FID2    D2      FID3    D3
+$MTAB   ID      I       X1      Y1      X2      Y2      X3      Y3      +ABC
+$+ABC   X4      Y4      ETC
+$NFTUBE SID     G1      G2      CP      VOLRT
+$NLPARM ID      INC     DT      KMETHOD KSTEP   MAXITER CONV    INTOUT  +ABC
+$+ABC   EPSU    EPSP    EPSW    MAXDIV  MAXQN   MAXLS   FSTRESS LSTOL
+$NLPC1  ID      TYPE    MIN     MAX                     DESITER MXINC
+$NOLIN1 SID     GI      CI      S       GJ      CJ      T
+$NOLIN2 SID     GI      CI      S       GJ      CJ      GK      CK
+$NOLIN3 SID     GI      CI      S       GJ      CJ      A
+$NOLIN4 SIDD    GI      CI      S       GJ      CJ      A
+$NOLIN5 SID     AA      AB      FAB     EA      EB      ALPA    ALPB    +ABC
+$+ABC   GA1     GA2     GA3     GA4     GB1     GB2     GB3     GB4
+$OMIT   ID      C       ID      C       ID      C       ID      C
+$OMIT1  C       G       G       G       G       G       G       G       +ABC
+$+ABC   G       G       G       ETC
+$OMIT1  C       ID1     "THRU"  ID2
+$OMITAX RID     HID     C       RID     HID     C
+$PACABS PID     SYNTH   TID1    TID2    TID3    TESTAR  CUTFR   B       +ABC
+$+ABC   K       M
+$PACBAR PID     MBACK   MSEPTM  FRESON  KRESON
+$PAERO1 PID     B1      B2      B3      B4      B5      B6
+$PAERO2 PID     ORIENT  WIDTH   AR      LRSB    LRIB    LTH1    LTH2    +ABC
+$+ABC   THI1    THN1    THI2    THN2    THI3    THN3
+$PAERO3 PID     NBOX    NCTRL           X5      Y5      X6      Y6      +ABC
+$+ABC   X7      Y7      X8      Y8      X9      Y9      X10     Y10     +DEF
+$+DEF   X11     Y11     X12     Y12
+$PAER04 PID     CLA     LCLA    CIRC    LCIRC   DOC1    CAOC1   GAPOC1  +ABC
+$+ABC   DOC2    CAOC2   GAPOC2  DOC3    CAOC3   GAPOC3  ETC
+$PAERO5 PID     NALPHA  LALPHA  NXIS    LXIS    NTAUS   LTAUSE          +ABC
+$+ABC   CAOC1   CAOC2   CAOC3   CAOC4   CAOC5   ETC
+$PANEL  NAME1   SETID1  NAME2   SETID2  NAME3   SETID3  NAME4   SETID4
+$PARAM  N       V1      V2
+$PBAR   PID     MID     A       I1      I2      J       NSM             +ABC
+$+ABC   C1      C2      D1      D2      E1      E2      F1      F2      +DEF
+$+DEF   K1      K2      I12
+$PBCOMP PID     MID     A       I1      I2      I12     J       NSM     +ABC
+$*ABC   K1      K2      M1      M2      N1      N2      SECTION         +DEF
+$+DEF   Y1      Z1      C1      MID1    SOUT1                           +GHI
+$+EFI   Y2      Z2      C2      MID2    SOUT2
+$PBEAM  PID     MID     A(A)    I1(A)   I2(A)   I12(A)  J(A)    NSM(A)  +ABC
+$+ABC   C1(A)   C2(A)   D1(A)   D2(A)   E1(A)   E2(A)   F1(A)   F2(A)   +DEF
+$+DEF   SO      X/XB    A       I1      I2      I12     J       NSM     +GHI
+$+GHI   C1      C2      D1      D2      E1      E2      F1      F2      +JKL
+$+JKL   K1      K2      S1      S2      NSI(A)  NSI(B)  CW(A)   CW(B)   +MNO
+$+MNO   M1(A)   M2(A)   M1(B)   M2(B)   N1(A)   N2(A)   N1(B)   N2(B)
+$PBEND  PID     MID     A       I1      I2      J       RB      THETAB  +ABC
+$+ABC   C1      C2      D1      D2      E1      E2      F1      F2      +DEF
+$+DEF   K1      K2      NSM     RC      ZC      DELTAN
+$PBEND  PID     MID     FSI     R       T       P       RB      THETAB  +ABC
+$+ABC                   NSM     RC      ZC
+$PCOMP  PID     ZO      NSM     SB      F.T.    TREF    GE      LAM     +ABC
+$+ABC   MID1    T1      THETA1  SOUTI   MID2    T2      THETA2  SOUT2   +DEF
+$+DEF   MID3    T3      THETA3  SOUT3   MID4    T4      THETA4  SOUT4
+$PCONEAXID      MID1    T1      MID2    I       MID3    T2      NSM     +ABC
+$+ABC   Z1      Z2      PHI1    PHI2    PHI3    PHI4    PHI5    PHI6    +DEF
+$+DEF   PHI7    PHI8    PHI9    PHI10   PHI11   PKHI12  PHI13   PHI14
+$PDAMP  PID     B       PID     B       PID     B       PID     B
+$PDUMI  PID     MID     A1      A2                      ETC             +ABC
+$+ABC           ETC     AN
+$PELAS  PID     K       GE      S       PID     K       GE      S
+$PFTUBE PID     CP      VOLRT   D1      D2
+$PGAP   PID     UO      FO      KA      KB      KT      MUY     MUZ
+$PGEN   PGID    PID1    LEID1   PID2    LEID2   PID3    LEID3   PID4    +ABC
+$+ABC   LEID4   PID5    ETC
+$PHBDY  PID     MID     AF      E       ALPHA   D1      D2
+$PHEX   PID     MID             NGP
+$PLOAD  SID     P       G1      G2      G3      G4
+$PLOADG SID     FID     PA      PB      PC      PD                      +ABC
+$+ABC   PE      PF      PG      PH
+$PLOADG SID     FID     P1      P2      P3      P4      D1      D2      +ABC
+$+ABC   FEID    DIR     EIDL    EIDH    FLAG
+$PLOADG2SID     FID     D1      D2      CI      TABID   P
+$PLOADX SID     P1      P3      G1      G2      G3
+$PLOADX1SID     EID     P1      P3      G1      G3      THETA
+$PLOAD1 SID     EID     TYPE    SCALE   X1      P1      X2      P2
+$PLOAD2 SID     P       EID     EID     EID     EID     EID     EID
+$PLOAD2 SID     P       EID1    "THRU"  EID2
+$PLOAD3 SID     P       EID1    G11     G12     EID2    G21     G22
+$PLOAD4 SID     EID     P1      P2      P3      P4      G1      G3ORG4  +ABC
+$+ABC   CID     N1      N2      N3
+$PLOAD4 SID     EID1    P1      P2      P3      P4      "THRU"  EID2    +ABC
+$+ABC   CID     N1      N2      N3
+$PLOTE  PEID    FLAG    FEID1   FEID2   FEID3   FEID4   FEID5   FEID6
+$PLOTE  PEID    FLAG    FEID1   THRU    FEID2
+$PLOTEL EID     G1      G2
+$PLOTG  PEID    FLAG    FID1    FID2    FID3    FID4    FID5    FID6
+$PLOTG  PEID    FLAG    FID1    THRU    FID2
+$PLOTOPT        PLOTELS MSGVIEW EC      EB      EN
+$PMASS  PID     M       PID     M       PID     M       PID     M
+$POINTAX        ID      RID     PHI
+$PQDMEM PID     MID     T       NSM
+$PRAC2D PID     MID     T       IPLANE  NSM     GAMMA   PHI
+$PRAC3D PID     MID     GAMMA   PHI
+$PRESAX SID     P       RID1    RID2    PHI1    PHI2
+$PRESPT IDF             IDP     PHI     IDP     PHI     IDP     PHI
+$PROD   PID     MID     A       J       C       NSM
+$PSHEAR PID     MID     T       NSM
+$PSHEAR PID     MID     T       NSM     F1      F2
+$PSHELL PID     MID1    T       MID2    12I/T3  MID3    TS/T    NSM     +ABC
+$+ABC   Z1      Z2      MID4
+$PSOLID PID     MID     CORDM   IN      STRESS  ISOP
+$PTRIM6 PID     MID     T1      T3      T5      NSM
+$PTUBE  PID     MID     OD      T       NSM     OD2
+$PVISC  PID     C1      C2              PID     C1      C2
+$QBDY1  SID     Q0      EID1    EID2    EID3    EID4    EID5    EID6
+$QBDY1  SID     Q0      EID1    "THRU"  EID2
+$QBDY2  SID     EID     Q01     Q02     Q03     Q04
+$QHBDY  SID     FLAG    Q0      AF      G1      G2      G3      G4
+$QSET   ID      C       ID      C       ID      C       ID      C
+$QSET1  C       G1      G2      G3      G4      G5      G6      G7
+$       G8      G9      ETC
+$QSET1  C       ID1     "THRU"  ID2
+$QVECT  SID     Q0      E1      E2      E3      EID1    EID2    EID3    +ABC
+$+ABC   EID4    EID5    ETC
+$QVOL   SID     QV      EID1    EID2    EID3    EID4    EID5    EID6
+$QVOL   SID     QV      EID1    "THRU"  EID2
+$RADLST EID1    EID2    EID3    EID4    EID5    EID6    EID7    EID8    +ABC
+$+ABC   EID9    ETC
+$RADMTX INDEX   FI,I    FI+1,I  FI+2,I  FI+3,I  FI+4,I  FI+5,I  FI+6,I  +ABC
+$+ABC   FI+7,I  ETC
+$RANDPS SID     J       K       X       Y       TID
+$RANDT1 SID     N       T0      TMAX
+$RBAR   EID     GA      GB      CNA     CNB     CMA     CMB
+$RBE1   EID     GN1     CN1     GN2     CN2     GN3     CN3             +ABC
+$+ABC           GN4     CN4     GN5     CN5     GN6     CN6             +DEF
+$+DEF   "UM"    GM1     CM1     GM2     CM2     GM3     CM3             +GHI
+$+GHI           GM4     CM4
+$RBE2   EID     GN      CM      GM1     GM2     GM3     GM4     GM5     +ABC
+$+ABC   GM6     GM7     GM8     ETC
+$RBE3   EID             REFGRID REFC    WT1     C1      G1,1    G1,2    +ABC
+$+ABC   G1,3    WT2     C2D     G2,1    G2,2    ---     WT3     C3      +DEF
+$+DEF   G3,1    ---             WT4     C4      G4,1    G4,2    ---     +GHI
+$+GHI   "UM"    GM1     CM1     GM2     CM2     GM3     CM3             +JKL
+$+JKL           GM4     CM4     GM5     CM5     GM6     CM6
+$RELEASESEID    C       G       G       G       G       G       G       +ABC
+$+ABC   G       G       ETC
+$RELEASESEID    C       ID1     "THRU"  ID2
+$RELEASESEID    C       "ALL"
+$RFORCE SID     G       CID     A       R1      R2      R3      METHOD
+$RINGAX ID              R       Z                       PS
+$RINGFL IDF     X1      X2      X3      IDF     X1      X2      X3
+$RLOAD1 SID     DAREA   DELAY   DPHASE  TC      TD
+$RLOAD2 SID     DAREA   DELAY   DPHASE  TB      TP
+$RROD   EID     GA      GB      CMA     CMB
+$RSPLINEEID     D/L     G1      G2      C2      G3      C3      G4      +ABC
+$+ABC   C4      G5      C5      G6      ETC
+$RSPLNG EID     C       FIDA    DA1     DA2     FIDB    DB1     DB2     +ABC
+$+ABC   D/L
+$RTRPLT EID     GA      GB      GC      CNA     CNB     CNC             +ABC
+$+ABC   CMA     CMB     CMC
+$SEBSET SEID    ID      C       ID      C       ID      C
+$SEBSET1SEID    C       G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      G9      ETC
+$SEBSET1SEID    C       GID1    THRU    GID12
+$SECSET SEID    ID      C       ID      C       ID      C
+$SECSET1SEID    C       G1      G2      G3      G4      G5      SG6     +ABC
+$+ABC   G7      G8      G9      ETC
+$SECSET1        SEID    C       GID1    THRU    GID12
+$SECSET1SEID            ALL
+$SECTAX ID      RID     R       PHI1    PHI2
+$SEELT  SEID    EID1    EID2    EID3    EID4    EID5    EID6    EID7
+$SEELT  SEID    EID1    "THRU"  EID2
+$SEQEP  ID      SEQID   ID      SEQID   ID      SEQID   ID      SEQID
+$SEQGP  ID      SEQID   ID      SEQID   ID      SEQID   ID      SEQID
+$SEQSEP SSID    PSID    GP1     GP2     GP3     GP4     GP5     GP6     +ABC
+$+ABC   GP7     GP8     ETC
+$SEQSET SEID    ID      C       ID      C       ID      C
+$SEQSET1SEID    C       G1      G2      G3      G4      G5      G6      +ABC
+$+ABC   G7      G8      ETC
+$SEQSET1SEID    C       GID1    "THRU"  GID2
+$SESET  SEID    G1      G2      G3      G4      G5      G6      G7
+$SESET  SEID    G1      "THRU"  G7
+$SESUP  SEID    ID      C       SID     C       ID      C
+$SETG   FID     D1      D2      D3      F1      F2      F3      F4      +ABC
+$+ABC   FID     D1      D2      D3      FID     D1      D2      D3      +DEF
+$+DEF   FID     D1      D2      D3      FID     D1      D2      D3
+$SET1   SID     G1      G2      G3      G4      G5      G6      G7      +ABC
+$+ABC   G8      ETC
+$SET2   SID     MACRO   SP1     SP2     CH1     CH2     ZMAX    ZMIN
+$SEUSET SEID    SNMAE   ID      C       ID      C       ID      C
+$SEUSET1SEID    SNAME   C       G1      G2      G3      G4      G5      +ABC
+$+ABC   G6      G7      ETC
+$SEUSET1SEID    SNAME   C       GID1    "THRU"  GID2
+$SLBDY  RHO     M       ID1     ID2     ID3     ID4     ID5     ID6     +ABC
+$+ABC   ID7     ETC
+$SLOAD  SID     S       F       S       F       S       F
+$SPC    SID     G       C       D       G       C       D
+$SPC1   SID     C       G1      G2      G3      G4      G5      G6      ABC
+$+BC    G7      G8      G9      ETC
+$SPC1   SID     C       GID1    "THRU"  GID2
+$SPCADD SID     S1      S2      S3      S4      S5      S6      S7      ABC
+$+BC    S8      S9      ETC
+$SPCAX  SSID    RID     HID     C       D
+$SPCG   SID     FID     C       D1      D2
+$SPCG   SID     FID     C       E1      E2      E3      E4
+$SPC1   SID     C       G1      G2      G3      G4      G5      G6
+$SPC1   SID     C       GID1    THRU    GID2
+$SPCADD SID     S1      S2      S3      S4      S5      S6      S7      +ABC
+$+ABC   S8      S9              ETC
+$SPCAX  SID     RID     HID     C       D
+$SPCD   SID     G       C       D       G       C       D
+$SPCOFF G       C       G       C       G       C       G       C
+$SPCOFF1C       G1      G2      G3      G4      G5      G6      G7
+$SPCOFF1C       GID1    THHRU   GID2
+$SPLINE1EID     CAERO   BOX1    BOX2    SETG    DZ
+$SPLINE2EIS     CAERO   ID1     ID2     SETG    DZ      DTOR    CID
+$SPLINE3EID     CAERO   BOXID   COMP    G1      C1      A1              +ABC
+$+ABC   G2      C2      A2              G3      C3      A3
+$SPOINT ID      ID      ID      ID      ID      ID      ID      ID
+$SPOINT ID1     "THRU"  ID2
+$SUPAX  RID     HID     C       RID     HID     C
+$SUPORT ID      C       ID      C       ID      C       ID      C
+$TABDMP1        ID      TYPE                                            +ABC
+$+ABC   F1      G1      F2      G2      F3      G3      F4      G4
+$TABLED1ID                                                              +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4      +DEF
+$TABLED2ID      X1                                                      +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3S     X4      Y4      +DEF
+$+DEF   X5      Y5      X6      Y6      X7      Y7      X8      Y9
+$TABLED3ID      X1      X2                                              +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4
+$TABLED4ID      X1      X2      X3      X4                              +ABC
+$+ABC   A0      A1      A2      A3      A4      A5      A6      A7
+$TABLEM1ID                                                              +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4
+$TABLEM2ID      S1                                                      +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4      +DEF
+$+DEF   X5      Y5      X6      Y6      X7      Y7      X8      Y8
+$TABLEM3ID      X1      X2                                              +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4
+$TABLEM4ID      X1      X2      X3      X4                              +ABC
+$+ABC   A0      A1      A2      A3      A4      A5      A6      A7
+$TABLESTTID                                                             +ABC
+$+ABC   T1      I1      T2      I2      T3      ETC
+$TABLES1ID                                                              +ABC
+$+ABC   X1      Y1      X2      Y2      X3      Y3      X4      Y4
+$TABRNDGID      TYPE    LU      WG
+$TABRND1ID                                                              +ABC
+$+ABC   F1      G1      F2      G2      F3      G3      F4      G4      +DEF
+$TEMP   SID     G       T       G       T       G       T
+$TEMPAX SID     RID     PHI     TEMP    SID     RID     PHI     TEMP
+$TEMPD  SID     T       SID     T       SID     T       SID     T
+$TEMPG  SID     FID     TA
+$TEMPP1 SID     EID1    T       T       T1      T2                      +ABC
+$+ABC   EID2    EID3    EID4    EID5    EID6    EID7    EID8    EID9
+$TEMPP1 EID2    "THRU"  EIDI    EIDJ    "THRU"  EIDK
+$TEMPP3 SID     EID1    Z0      T0      Z1      T1      Z2      T2      +ABC
+$+ABC   Z3      T3      Z4      T4      Z5      T5      Z6      T6      +DEF
+$+DEF   Z7      T7      Z8      T8      Z9      T9      Z10     T10     +GHI
+$+GHI   EID2    EID3    EID4    EID5    EID6S   EID7    EID8    EID9
+$TEMPRB SID     EID1    TA      TB      T=1A    T=1B    T=2A    T=2B    +ABC
+$+ABC   TCA     TDA     TEA     TFA     TCB     TDB     TEB     TFB     +DEF
+$+DEF   EID2    EID3    EID4    EID5    EID6    EID7    EID8    EID9
+$TEMPRB EID2    THRU    EIDI    EIDJ            THRU    EIDK
+$TF     SID     GD      CD      B0      B1      B2                      +ABC
+$+ABC   G(1)    C(1)    A0(1)   A1(1)   A2(1)
+$TIC    SID     G       C       U0      V0
+$TLOAD  SID     L       M       TYPE    T1      T2      F       P       +ABC
+$+ABC   C       B
+$TLOAD1 SID     DAREA   DELAY   TYPE    TID
+$TLOAD2 SID     DAREA   DELAY   TYPE    T1      T2      F       P       +ABC
+$+ABC   C       B
+$TRICON TYPE    FEID    PID     TH      FIDA    DA1     DA2     DA3     +ABC
+$+ABC   FIDB    DB1     DB2     DB3     EIDL    EIDH
+$TRIM   ID      MACH    Q       LABEL1  UX1     LABEL2  UX2
+$TSTEP  SID     N1      DT1     NO1                                     +ABC
+$+ABC           N2      DT2     NO2
+$TSTEPNLID      NDT     DT      NO      METHOD  KSTEP   MAXITER CONV    +ABC
+$+ABC   EPSU    EPSP    EPSW    MAXDIV  MAXQN   MAXLS   FSTRESS         +DEF
+$+DEF   MAXBIS  ADJUST  MSTEP   RB      MAXR    UTOL
+$USET   SNAME   ID      C       ID      C       ID      C
+$USET1  SNAME   C       ID      ID      ID      ID      ID      ID      +ABC
+$+ABC   ID      ID      ETC
+$USET1  SNAME   C       ID1     "THRU"  ID2
+$VARIAN DEL S1  DEL S2  DEL S3  DEL S4  DEL S5  DEL S6  DEL S7  DEL S8  ABC
+$+BC    DEL S9  DEL S10 DEL S11 ETC
+$VIEW   IVIEW   SKSHD   KBSHD   NB      NG      DISLIN
+$1PARM  JRUN    K1      SK1     K2      SK2     K3      SK3
+$1VARY  NMEM    FIELD   K       A       B       ID1     ID2     ID3
+$1VARY  NMEM    FIELD   K       A       B       ID1     =THRU=  ID2
+ENDDATA

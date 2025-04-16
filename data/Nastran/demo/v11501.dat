@@ -1,0 +1,46 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V11501.DAT
+$ *1    15-JUN-1990 16:43:30 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V11501.DAT
+ID MSC, V11501   $
+$ Modified 1-Apr-2003 v2003 rak
+$ID MSC, V4801 $ JRH 22-JULY-81, EDB 24-JULY-84
+SOL  115
+TIME 10
+CEND
+TITLE=NORMAL MODES OF A FREE CIRCULAR PLATE                    V11501
+SUBTITLE=TIMOSHENKO AND YOUNG, VIBRATION PROBLEMS IN ENGINEERING; P. 501
+SET 5 = 0,1,2,3
+HARMONICS=5
+METHOD=10
+ SET 6 = 1
+ NOUTPUT=6
+ DISPLACEMENT=ALL
+BEGIN BULK
+$ Set k6rot=0.0 to get pre V2003 results
+param,k6rot,0.0
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CORD2C  10              0.0     0.0     0.0     0.0     0.0     10.0    +C10
++C10    10.0
+GRID    1               0.0     0.0     0.0             6
+GRID    2       10      1.0     0.0     0.0     10      6
+=       *(2)    =       *(1.0)  ==
+=(9)
+GRID    3       10      1.0     30.0    0.0     10      6
+=       *(2)    =       *(1.0)  ==
+=(9)
+CTRIA3  101     101     1       2       3
+CQUAD4  111     101     2       3       5       4
+=       *(1)    =       *(2)    *(2)    *(2)    *(2)
+=(8)
+PSHELL  101     102     0.1     102
+CYSYM   12      ROT
+CYAX    1
+MAT1    102     10.+6           0.3     0.10
+PARAM   WTMASS  .002588
+CYJOIN  1       C       2       4       6       8       10      12      +C1
++C1     14      16      18      20      22
+CYJOIN  2       C       3       5       7       9       11      13      +C2
++C2     15      17      19      21      23
+EIGR    10      MGIV                            6                       +E1
++E1     MASS
+ENDDATA

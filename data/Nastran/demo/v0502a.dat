@@ -1,0 +1,50 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V0502A.DAT
+$ *1    15-JUN-1990 16:40:42 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V0502A.DAT
+ID MSC, V0502A  $ TEW 15-FEB-82  RF5D33 DELETED FOR V65
+TIME 2
+SOL BUCKLING
+$ COMPILE DMAP=SOL5,SOUIN=MSCSOU,NOLIST,NOREF $
+$ RFALTER RF5D65
+$READ 9 $ RF5D65
+CEND
+ TITLE=SIMPLE FRAME ANALYSIS WITH BUCKLING                     V0502A
+ SUBTITLE=REF: TIMOSHENKO AND GERE, THEORY OF ELASTIC STABILITY; P. 149
+SUBCASE 1    $ SYMM. CASE P=500. STATIC ANAL.
+ LABEL=STATIC CASE, SYMMETRIC BOUNDARY CONDITIONS
+ LOAD=10
+ SPC=1       $ SPC FOR STATIC CASE
+ STRESS=ALL
+ FORCE=ALL
+ DISP=ALL
+SUBCASE 2    $ ANTISYMMETRIC CASE, BUCKLING
+ LABEL=BUCKLING CASE, ANTISYMMETRIC BOUNDARY CONDITIONS
+ METHOD=100  $ INV METHOD
+ SPC=2       $ SPC FOR BUCKLING, ANTISYMMETRIC CASE
+OUTPUT(PLOT)
+CSCALE 1.3
+PLOTTER NASTRAN
+SET 1 = ALL
+VIEW 0.,0.,0.
+AXES Z,X,Y
+FIND SCALE ORIGIN 1, SET 1
+PLOT MODAL DEFORMATION 0, SET 1 LABEL BOTH
+$ LAST MODIFIED 23-SEP-1985
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+CBAR    101     10      1       2       0.0     0.0     1.0
+=       *(1)    =       *(1)    *(1)    ==
+=(4)
+GRID    1               50.0    0.0     0.0             345
+=       *(1)    =       =       *(25.)  ==
+=(3)
+GRID    6               25.0    100.0   0.0             345
+GRID    7               0.0     100.0   0.0             345
+MAT1    10      1.0+6           .3
+PBAR    10      10      1.0     1.0     1.0
+FORCE   10      5               500.    0.0     -1.0    0.0
+SPC     1       1       123456  0.0     7       16      0.0
+SPC     2       1       123456  0.0     7       2       0.0
+EIGB    100     INV     .0005   6.      6       6                       +C1
++C1     MAX
+ENDDATA

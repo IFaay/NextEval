@@ -1,0 +1,31 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10307.DAT
+$ *1    15-JUN-1990 16:42:00 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10307.DAT
+NASTRAN PREFOPT=2
+ID MSC, V10307   $ LNA 12-DEC-1988 CONVERTED TO TRIAX6
+$ID MSC,V0307    $ KDB 31-OCT-83
+TIME 30
+SOL 103
+$SOL 3
+CEND
+TITLE=CIRCULAR PLATE, TRIAX6 ELEMENTS                          V10307
+SUBTITLE=  REF. V6302S
+SPC=200
+METHOD=300
+$DISPL=ALL
+BEGIN BULK
+MESHOPT YES
+EGRID   1001            0.              0.
+EGRID   1002            3.5             0.
+EGRID   1003            3.5             .125
+EGRID   1004            0.              .125
+GRIDG   1               2456    80      -1001   -1002   -1003           +GRI
++GRI    4       -1004
+GRIDU   1       1               10              1
+CGEN    TRIAX6  1       100     1
+MAT1    100     3.0E7           0.3     7.764E-4
+SPCG    200     1       1       A       D
+SPCG    200     1       13      B       C
+EIGR    300     SINV    0.      1.0E4           9999                    +EIG
++EIG    MASS
+ENDDATA

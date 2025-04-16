@@ -1,0 +1,50 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V11201.DAT
+$ *1    15-JUN-1990 16:43:22 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V11201.DAT
+ID MSC, V11201 $
+$ID MSC, V3101 $ TEW 22-JULY-81 , LNA-DEC87
+TIME 30
+SOL 112
+$SOL 31
+CEND
+TITLE=TRANSIENT RESPONSE OF BEAM, NORMAL MODE METHOD -- PROB.  V11201
+SUBTITLE=HURTY AND RUBINSTEIN, DYNAMICS OF STRUCTURES; PP. 294 ; SYMMETRIC MODES
+SVECTOR=ALL
+SET 5 = 1,2
+METHOD=10
+DLOAD=30
+LOADSET=35
+TSTEP=20
+ DISPLACEMENT=5
+ OLOAD=5
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1               0.0     0.0     0.0             1345
+GRID    2               50.     0.0     0.0             13456
+GRID    3               0.0     -10.    0.0             123456
+GRID    4               12.5    0.0     0.0             1345
+GRID    5               25.     0.0     0.0             1345
+GRID    6               37.5    0.0     0.0             1345
+CONROD  201     3       1       200     .487
+CBEAM   101     100     1       4       1.0     1.0
+CBEAM   102     100     4       5       1.0     1.0
+CBEAM   103     100     5       6       1.0     1.0
+CBEAM   104     100     6       2       1.0     1.0
+MAT1    100     1E+6            .3      0.1
+MAT1    200     1E+4            .3
+PBEAM   100     100     1.00    10.     1.0                             +Z1
++Z1     NO      1.0                                                     +Z4
++Z4     0.0     0.0
+EIGR    10      GIV                             4                       +E1
++E1     MASS
+TLOAD1  30      33      0       0       34
+PLOAD1  38      101     FY      FR      0.0     0.0     1.0     -0.5
+PLOAD1  38      102     FY      FR      0.0     -0.5    1.0     -1.0
+PLOAD1  38      103     FY      FR      0.0     -1.0    1.0     -1.5
+PLOAD1  38      104     FY      FR      0.0     -1.5    1.0     -2.0
+LSEQ    35      33      38
+TSTEP   20      84      0.025   2
+TABLED1 34                                                              +T1
++T1     0.0     0.0     0.1     0.0     1.1     1.0     1.125   0.0     +T2
++T2     2.1     0.0     ENDT
+ENDDATA

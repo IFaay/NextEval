@@ -1,0 +1,30 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element V10301.DAT
+$ *1    15-JUN-1990 16:41:45 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element V10301.DAT
+ID MSC, V10301   $
+$ID MSC, V0301 $ TEW 21-JULY-81
+$SOL 3
+SOL 103
+TIME 5
+CEND
+TITLE=TWO D.O.F. SYSTEM MODAL ANALYSIS -- PROB.                V10301
+SUBTITLE= GREENWOOD, PRINCIPLES OF DYNAMICS; PP. 459, EXAMP. 9-1
+METHOD=10
+ DISPLACEMENT=ALL
+ SPCFORCES=ALL
+ ESE=ALL
+$ LAST MODIFIED 19-MAR-1984
+$ MASS TO MAX ON EIGR CARD  - MKB
+BEGIN BULK
+$.......2.......3.......4.......5.......6.......7.......8.......9.......10.....
+GRID    1       0       0.0     0.0     0.0             23456
+GRID    2       0       10.     0.0     0.0             23456
+GRID    3       0       20.     0.0     0.0             123456
+CONROD  1       1       2       5       0.1
+CONROD  2       2       3       5       0.1
+CONM2   101     1               4.0
+CONM2   102     2               1.0
+MAT1    5       1.E+5           .3
+EIGR    10      INV     0.0     50.     4                               +E1
++E1     MAX
+ENDDATA

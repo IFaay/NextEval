@@ -1,0 +1,154 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10111D.DAT
+$ *1    15-JUN-1990 16:33:05 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10111D.DAT
+NASTRAN 
+ID MSC, D10111D  $ V66 SSW
+$ID MSC, D6111D   $ MODIFIED BY JRH MAR 84 DBS=D10111D
+$ID MSC, D6111 $ MAG 9FEB82
+$ FORMERLY S01D1A
+TIME 5
+$TIME 10
+SOL 101
+$SOL 61
+CEND
+TITLE = REINFORCED CYLINDRICAL SHELL                           D10111D
+SUBTITLE = MULTILEVEL SUPERELEMENTS
+LABEL = S.E. MATRIX GENERATION CHECK RUN
+ECHO=UNSORT
+$ GENERATE BUT DO NOT REDUCE STIFFNESS AND LOAD MATRIX
+$ SEMG = ALL  USE AUTOMAIC SUPERELEMENT PROCESSING/RESTART CAPABILITIES(V66)
+$ SELG = ALL
+SPC  = 1000
+LOAD = 1000
+LABEL = ONE G GRAVITY LOAD
+DISPL = ALL
+SPCFORCE = ALL
+ELFORCE  = ALL
+OLOAD = ALL
+ESE   = ALL
+SUPER = ALL
+BEGIN BULK
+$EGRID  7       1       70.     30.     30.     1                               
+$EGRID  8       1       70.     0.      30.     1                               
+$GRIDG  1       1               4       3       4       10      10      FIELD1  
+$+IELD1 4       9                                                               
+$GRIDG  2       1               4       1       2       4       20      FIELD2  
+$+IELD2 1       3                                                               
+$GRIDG  3       1               2       1       2       4       30      FIELD3  
+$+IELD3 1       3       3       5       6       8       7                       
+$EQUIV  2       100     104             1       0       4                       
+$EQUIV  3       10      310             1       0       300                     
+$EQUIV  3       11      311             1       2       302                     
+$EQUIV  3       12      312             1       4       304                     
+$EQUIV  -2      0       4               3       0       2                       
+$CGEN   QUAD4   1       10      1                                               
+$CGEN   QUAD4   20      20      2                                               
+$CGEN   QUAD4   30      40      3                                               
+$PGEN   40      31      32      30      35      31      38                      
+$       MAT1    10      LEFT OUT THROUGH OVERSIGHT                              
+$ PARAM   AUTOSPC YES $ DEFAULT VALUE FOR SOLS 61,62,63                         
+$       SYMMETRIC BOUNDARY CONDITION                                            
+$       DYNAMIC ANALYSIS POINTS FOR MODES RUN LATER                             
+$       RENAME SEIDS FOR GRIDS THAT MESH GENERATED                              
+$       DYNAMIC ANALYSIS SET GRID POINT OUTLINE                                 
+$       TOKEN MASS FOR S. E. 0                                                  
+ASET1   1       3       4       9       10      10202                           
+ASET1   3       3       4                                                       
+CONM2   301     3               10.                                             
+CONM2   401     4               10.                                             
+CORD2C  1               0.      0.      0.      0.      0.      1.      CORD    
++ORD    1.      0.      0.                                                      
+CQUAD4  1       10      3       10001   10101   10100                           
+CQUAD4  2       10      10001   10002   10102   10101                           
+CQUAD4  3       10      10002   10003   10103   10102                           
+CQUAD4  4       10      10003   4       10104   10103                           
+CQUAD4  5       10      10100   10101   10201   10200                           
+CQUAD4  6       10      10101   10102   10202   10201                           
+CQUAD4  7       10      10102   10103   10203   10202                           
+CQUAD4  8       10      10103   10104   10204   10203                           
+CQUAD4  9       10      10200   10201   10301   10300                           
+CQUAD4  10      10      10201   10202   10302   10301                           
+CQUAD4  11      10      10202   10203   10303   10302                           
+CQUAD4  12      10      10203   10204   10304   10303                           
+CQUAD4  13      10      10300   10301   10401   9                               
+CQUAD4  14      10      10301   10302   10402   10401                           
+CQUAD4  15      10      10302   10303   10403   10402                           
+CQUAD4  16      10      10303   10304   10      10403                           
+CQUAD4  20      20      1       20001   10001   3                               
+CQUAD4  21      20      20001   30001   10002   10001                           
+CQUAD4  22      20      30001   20003   10003   10002                           
+CQUAD4  23      20      20003   2       4       10003                           
+CQUAD4  30      31      1       3       10100   30100                           
+CQUAD4  31      31      30100   10100   10200   30200                           
+CQUAD4  32      31      30200   10200   10300   5                               
+CQUAD4  33      30      30001   10002   10102   30101                           
+CQUAD4  34      30      30101   10102   10202   30201                           
+CQUAD4  35      30      30201   10202   10302   30301                           
+CQUAD4  36      31      2       4       10104   30102                           
+CQUAD4  37      31      30102   10104   10204   30202                           
+CQUAD4  38      31      30202   10204   10304   6                               
+GRAV    1000    0       386.4                   -1.0                            
+GRID    1       1       60.     30.     0.      1                               
+GRID    2       1       60.     0.      0.      1                               
+GRID    3       1       70.     30.     0.      1                               
+GRID    4       1       70.     0.      0.      1                               
+GRID    5       1       62.5    30.     30.     1       5                       
+GRID    6       1       62.5    0.      30.     1       5                       
+GRID    9       1       70.     30.     40.     1       4                       
+GRID    10      1       70.     0.      40.     1       4                       
+GRID    10001   1       70.     22.5    0.0     1               10              
+GRID    10002   1       70.     15.     0.0     1               10              
+GRID    10003   1       70.     7.5     0.0     1               10              
+GRID    10100   1       70.     30.     10.     1               10              
+GRID    10101   1       70.     22.5    10.     1               10              
+GRID    10102   1       70.     15.     10.     1               10              
+GRID    10103   1       70.     7.5     10.     1               10              
+GRID    10104   1       70.     0.0     10.     1               10              
+GRID    10200   1       70.     30.     20.     1               10              
+GRID    10201   1       70.     22.5    20.     1               10              
+GRID    10202   1       70.     15.     20.     1               10              
+GRID    10203   1       70.     7.5     20.     1               10              
+GRID    10204   1       70.     0.0     20.     1               10              
+GRID    10300   1       70.     30.     30.     1               10              
+GRID    10301   1       70.     22.5    30.     1               10              
+GRID    10302   1       70.     15.     30.     1               10              
+GRID    10303   1       70.     7.5     30.     1               10              
+GRID    10304   1       70.     0.0     30.     1               10              
+GRID    10401   1       70.     22.5    40.     1               10              
+GRID    10402   1       70.     15.     40.     1               10              
+GRID    10403   1       70.     7.5     40.     1               10              
+GRID    20001   1       60.     22.5    0.0     1               20              
+GRID    20003   1       60.     7.5     0.0     1               20              
+GRID    30001   1       60.     15.     0.0     1               30              
+GRID    30100   1       60.8333 30.     10.     1               30              
+GRID    30101   1       60.8333 15.     10.     1               30              
+GRID    30102   1       60.8333 0.0     10.     1               30              
+GRID    30200   1       61.6667 30.     20.     1               30              
+GRID    30201   1       61.6667 15.     20.     1               30              
+GRID    30202   1       61.6667 0.0     20.     1               30              
+GRID    30301   1       62.5    15.     30.     1               30              
+MAT1    20      1.+7            0.3     0.1                                     
+MAT1    30      1.+7            0.3     0.1                                     
+PARAM   GRDPNT  0                                                               
+PARAM   WTMASS  .002588                                                         
+PLOTEL  109     10      9                                                       
+PLOTEL  300     3       10202                                                   
+PLOTEL  340     3       4                                                       
+PLOTEL  400     4       10202                                                   
+PLOTEL  410     4       10                                                      
+PLOTEL  900     9       10202                                                   
+PLOTEL  930     9       3                                                       
+PLOTEL  1000    10      10202                                                   
+PSHELL  10      10      1.0     10              10                              
+PSHELL  20      20      1.0     20              20                              
+PSHELL  30      30      1.0     30              30                              
+PSHELL  31      30      .5      30              30                              
+SESET   0       10202                                                           
+SESET   10      30001                                                           
+SESET   30      5       6                                                       
+SPC1    1000    246     1       30100   30200   5                               
+SPC1    1000    246     2       30102   30202   6                               
+SPC1    1000    246     3       10100   10200   10300   9                       
+SPC1    1000    246     4       10104   10204   10304   10                      
+SUPORT  10202   3                                                               
+ENDDATA
