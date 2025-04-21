@@ -1,0 +1,69 @@
+$ DEC/CMS REPLACEMENT HISTORY, Element D10703.DAT
+$ *1    15-JUN-1990 16:35:18 CMSMGR "66B PLUS/G 66B/ Initial installation of DEMO test problems"
+$ DEC/CMS REPLACEMENT HISTORY, Element D10703.DAT
+NASTRAN SYSTEM(7)=-1, system(108)=2048   $
+ID MSC, D10703 $ ABB 8-JUN-1988
+$ Modified 14-Jan-2008 T_Kowalski v2008
+$ID MSC, D10701B $ ABB 14-JAN-1988
+$ID MSC, D07D1B   $
+$DIAG 8,13
+$DIAG 12
+TIME  6   $  TIME IN MINUTES FOR IBM/145
+$SOL 28
+SOL 107
+$SOL DIRECT COMPLEX EIGENVALUES, (3)
+$ALTER 33
+$MATPRT MGG // 0 / 1 $
+CEND
+ECHO = SORT
+TITLE = MSC/NASTRAN DEMONSTRATION PROBLEM  D-07                D10703
+SUBTITLE = STABILITY OF A MISSILE WITH AUTOPILOT
+LABEL      = COMPLEX INVERSE POWER METHOD
+CMETHOD= 1 $ COMPLEX INVERSE POWER METHOD
+$CMETHOD= 2 $ HESS
+TFL = 1
+K2PP = PILOT
+SDISPLACEMENT = ALL
+BEGIN BULK
+GRDSET                                                  2346
+GRID    1                               0.
+GRID    2                               5.
+GRID    3                               10.
+GRID    4                               15.
+GRID    5                               20.
+GRID    6                               25.
+GRID    7                               30.
+GRID    8                               35.
+GRID    9                               40.
+GRID    10                              45.
+GRID    11                              50.
+BAROR           1                       1.                      1
+CBAR    1               1       2
+CBAR    2               2       3
+CBAR    3               3       4
+CBAR    4               4       5
+CBAR    5               5       6
+CBAR    6               6       7
+CBAR    7               7       8
+CBAR    8               8       9
+CBAR    9               9       10
+CBAR    10              10      11
+PBAR    1       1       3.14-2  7.811-3                 1550.
+MAT1    1       6.894+10        0.3     2.6+3
+PARAM   COUPMASS 1
+PARAM   G       0.04
+EPOINT  20
+TF      1       20              1.      0.688   0.948                   +TF1
++TF1    2       5       -.500   -.688                                   +TF2
++TF2    8       5       -.500   -.688
+DMIG    PILOT   0       1       1       1
+DMIG    PILOT   20                      1       1       -0.718+6
+$EIGC    1       INV     MAX                                             +EIGC1
+$+EIGC1  0.0     14.     0.0     56.     44.     4       6
+EIGC    1       INV     MAX                                             +EIGC1
++EIGC1  0.0     18.     0.0     28.      4.     2       2
+EIGC    2       HESS    MAX                                             +EIGC2
++EIGC2  0.0     14.     0.0     56.     44.     4       28
+OMIT1   5       1       3       4       5       6       7       9       +OMIT
++OMIT   10      11
+ENDDATA

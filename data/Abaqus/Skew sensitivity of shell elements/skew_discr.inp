@@ -1,0 +1,94 @@
+*HEADING
+SKEW SENSITIVITY OF SHELLS: MESH <level>, <elemType>, <delta> DEG
+** INPUT FILE FOR 3 PARAMETER STUDY
+*RESTART,TIMEMARKS=YES,WRITE,NUMBER INTERVAL=1
+*PREPRINT,PARVAL=YES,PARSUBS=YES
+** level=1. is 4X4 mesh
+** level=2. is 8X8 mesh
+** inc1=node increment in first element generation direction
+** inc2=node increment in second element generation direction
+** ne=number of elements generated in each direction
+** time=time of analysis
+** inter=time interval for history output
+*PARAMETER
+# basic discretization level
+level = 1.
+*PARAMETER DEPENDENCE, TABLE=mesh, NUMBER VALUES=6
+2,200,4,10.,.01,1.
+1,100,8,20.,.02,2.
+*PARAMETER,TABLE=mesh,DEPENDENT=(rinc1,rinc2,rne,time,inter),
+INDEPENDENT=(level)
+*PARAMETER
+# convert node increments to integer
+inc1 = int(rinc1)
+inc2 = int(rinc2)
+ne = int(rne)
+en2 = 1 + inc1
+en3 = 1 + inc1 + inc2 
+en4 = en3 - inc1
+*PARAMETER
+# basic element type
+elemType = 'S4R'
+# basic skew angle
+delta = 90.
+# convert angle delta to radians
+pi = 3.1415
+deltaRad = delta*pi/180. 
+# corner node coordinates based on skew angle
+x801 = cos(deltaRad)
+y801 = sin(deltaRad)
+x809 = cos(deltaRad)+1.
+y809 = sin(deltaRad)
+*NODE, NSET=CORNERS
+1,   0.,    0.
+9,   1.,    0.
+** parametrized corner coordinates
+801, <x801>, <y801>
+809, <x809>, <y809>
+*NGEN,NSET=BOT
+1,9,1
+*NGEN,NSET=TOP
+801,809,1
+*NFILL
+BOT,TOP,8,100
+*NSET,NSET=SIDES,GEN
+1,9,1
+801,809,1
+1,801,100
+9,809,100
+*NSET,NSET=CENTND
+405, 
+*ELEMENT, TYPE=<elemType>
+1, 1, <en2>, <en3>, <en4>
+*ELGEN,ELSET=ALLELS
+1,<ne>,<inc1>,1,<ne>,<inc2>,100
+*MATERIAL ,NAME=METAL
+*ELASTIC
+3.E7,  .3
+*DENSITY
+3.0E3, 
+*SHELL SECTION,MATERIAL=METAL,ELSET=ALLELS,SECTION INTEGRATION=GAUSS
+.01,
+*BOUNDARY
+SIDES,1,3
+*NSET,NSET=QA_TEST_CENTND
+CENTND,
+**
+*STEP
+*DYNAMIC, EXPLICIT
+ ,<time>
+*DLOAD
+ALLELS,VP,3400.0
+ALLELS,P,-1.0
+***OUTPUT,HISTORY,TIME INTERVAL=<inter>
+***NODE OUTPUT,NSET=CENTND
+**U,
+*FILE OUTPUT,TIMEMARKS=YES, NUMBER INTERVAL=1
+*NODE FILE, NSET=CENTND
+U,  
+*OUTPUT, FIELD, TIMEMARKS=YES, NUMBER INTERVAL=1
+*NODE OUTPUT, NSET=QA_TEST_CENTND
+U,  
+*OUTPUT,FIELD,VARIABLE=PRESELECT
+*OUTPUT,HISTORY,VARIABLE=PRESELECT, FREQUENCY=200
+*END STEP

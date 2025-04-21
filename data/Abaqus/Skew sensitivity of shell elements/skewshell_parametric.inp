@@ -1,0 +1,64 @@
+*HEADING
+SKEW SENSITIVITY OF SHELLS: 4 X 4 MESH,                   
+ <elemType>, <delta> DEG		
+*PREPRINT,PARVAL=YES,PARSUBS=YES
+*PARAMETER
+# basic element type
+elemType = 'S8R'
+# basic skew angle
+delta = 90.
+# convert angle delta to radians
+pi = 3.1415
+deltaRad = delta*pi/180. 
+# corner node coordinates based on skew angle
+x801 = cos(deltaRad)
+y801 = sin(deltaRad)
+x809 = cos(deltaRad)+1.
+y809 = sin(deltaRad)
+*NODE, NSET=CORNERS
+1,   0.,    0.
+9,   1.,    0.
+** parametrized corner coordinates
+801, <x801>, <y801>
+809, <x809>, <y809>
+*NGEN,NSET=BOT
+1,9,1
+*NGEN,NSET=TOP
+801,809,1
+*NFILL
+BOT,TOP,8,100
+*NSET,NSET=CENTND
+405, 
+** parametrized element type
+*ELEMENT, TYPE=<elemType>
+1,  1,3,203,201,2,103,202,101
+*NSET,NSET=SIDES,GENERATE
+1,9,1
+801,809,1
+1,801,100
+9,809,100
+*ELGEN,ELSET=ALLELS
+1,4,2,1,4,200,4
+*ELSET,ELSET=CENTER
+6,7,10,11
+*SHELL SECTION,MATERIAL=A1,ELSET=ALLELS
+.01,3
+*MATERIAL,NAME=A1
+*ELASTIC
+3.E7,  .3
+*BOUNDARY
+SIDES,1,3
+*STEP
+*STATIC
+*DLOAD
+ALLELS,P,-1.
+*OUTPUT,FIELD
+*NODE OUTPUT,NSET=CENTND
+U
+*ELEMENT OUTPUT,ELSET=CENTER,POSITION=NODES
+SF
+*NODE PRINT, NSET=CENTND
+U, 
+*NODE FILE, NSET=CENTND
+U, 
+*END STEP
