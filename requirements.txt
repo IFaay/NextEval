@@ -1,0 +1,6 @@
+requests
+sshtunnel
+openai
+beautifulsoup4
+weasyprint
+PyPDF2
