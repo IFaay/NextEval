@@ -1,0 +1,111 @@
+Abaqus/Explicit 2023                            DATE 21-4月-2025  TIME 23:46:09
+-------------------------------------------------------------------------------
+ PREPROCESSOR WARNING MESSAGES
+-------------------------------------------------------------------------------
+
+
+***WARNING: There are 3 warning messages in the data (.dat) file.  Please
+            check the data file for possible errors in the input file.
+
+
+-------------------------------------------------------------------------------
+ MODEL INFORMATION (IN GLOBAL X-Y COORDINATES)
+-------------------------------------------------------------------------------
+
+   Total mass in model = 4056.5
+   Center of mass of model = ( 1.501702E+00, 1.344790E+00)
+
+   Moments of Inertia :
+                 About Center of Mass              About Origin
+      I(XX)          2.150108E+03                  9.486200E+03
+      I(YY)          4.169112E+03                  1.331705E+04
+      I(XY)          1.506657E+03                 -6.685421E+03
+      I(ZZ)          6.319220E+03                  2.280325E+04
+
+-------------------------------------------------------------------------------
+ STABLE TIME INCREMENT INFORMATION
+-------------------------------------------------------------------------------
+
+
+  The stable time increment estimate for each element is based on
+  linearization about the initial state.
+
+
+   Initial time increment = 4.71038E-05
+
+   Statistics for all elements:
+      Mean = 9.13378E-05
+      Standard deviation = 2.26871E-05
+
+   Most critical elements:
+    Element number   Rank    Time increment   Increment ratio
+   ----------------------------------------------------------
+           6          1       4.710383E-05      1.000000E+00
+           4          2       6.470329E-05      7.279974E-01
+          12          3       6.772782E-05      6.954871E-01
+          10          4       8.118507E-05      5.802031E-01
+           2          5       9.175479E-05      5.133664E-01
+           5          6       9.303437E-05      5.063056E-01
+          11          7       9.345156E-05      5.040454E-01
+           8          8       9.949462E-05      4.734309E-01
+           3          9       1.073373E-04      4.388393E-01
+           9         10       1.100920E-04      4.278587E-01
+
+
+Abaqus/Explicit 2023                            DATE 21-4月-2025  TIME 23:46:14
+
+The single precision Abaqus/Explicit executable will be used in this analysis.
+
+
+-------------------------------------------------------------------------------
+ SOLUTION PROGRESS
+-------------------------------------------------------------------------------
+
+ STEP 1  ORIGIN 0.0000
+
+  Total memory used for step 1 is approximately 872.9 kilobytes.
+  Global time estimation algorithm will be used.
+  Scaling factor:  1.0000
+              STEP     TOTAL      WALL      STABLE    CRITICAL    KINETIC      TOTAL
+INCREMENT     TIME      TIME      TIME   INCREMENT     ELEMENT     ENERGY     ENERGY
+        0  0.000E+00 0.000E+00  00:00:00 4.710E-05           6  0.000E+00  0.000E+00
+Results number 0 at increment zero.
+Output Field Frame Number   0, of    5, at step time 0.000E+00
+Output Field Frame Number   0, of    1, at step time 0.000E+00
+       99  5.030E-03 5.030E-03  00:00:00 5.109E-05           6  4.207E-04  1.138E-06
+      197  1.004E-02 1.004E-02  00:00:00 5.109E-05           6  2.593E-03  6.370E-06
+      295  1.504E-02 1.504E-02  00:00:00 5.109E-05           6  9.010E-03  1.057E-05
+      392  2.000E-02 2.000E-02  00:00:00 5.109E-05           6  1.629E-02  1.148E-05
+Output Field Frame Number   1, of    5, at step time 2.000E-02
+      490  2.501E-02 2.501E-02  00:00:00 5.109E-05           6  2.232E-02  1.516E-05
+      588  3.001E-02 3.001E-02  00:00:00 5.109E-05           6  2.151E-02  2.173E-05
+      686  3.502E-02 3.502E-02  00:00:00 5.109E-05           6  1.509E-02  3.328E-05
+      784  4.003E-02 4.003E-02  00:00:00 5.109E-05           6  7.700E-03  4.271E-05
+Output Field Frame Number   2, of    5, at step time 4.003E-02
+      882  4.504E-02 4.504E-02  00:00:00 5.109E-05           6  3.748E-03  2.995E-05
+      980  5.004E-02 5.004E-02  00:00:00 5.109E-05           6  2.993E-03 -5.531E-06
+     1078  5.505E-02 5.505E-02  00:00:00 5.109E-05           6  3.502E-03 -2.308E-05
+     1175  6.001E-02 6.001E-02  00:00:00 5.109E-05           6  3.966E-03 -7.149E-05
+Output Field Frame Number   3, of    5, at step time 6.001E-02
+     1273  6.501E-02 6.501E-02  00:00:00 5.109E-05           6  7.256E-03 -1.546E-04
+     1371  7.002E-02 7.002E-02  00:00:00 5.109E-05           6  1.401E-02 -2.543E-04
+     1469  7.503E-02 7.503E-02  00:00:00 5.109E-05           6  2.193E-02 -4.142E-04
+     1567  8.003E-02 8.003E-02  00:00:00 5.109E-05           6  2.601E-02 -5.707E-04
+Output Field Frame Number   4, of    5, at step time 8.003E-02
+     1665  8.504E-02 8.504E-02  00:00:00 5.109E-05           6  2.358E-02 -7.452E-04
+     1763  9.005E-02 9.005E-02  00:00:00 5.109E-05           6  1.673E-02 -9.835E-04
+     1861  9.505E-02 9.505E-02  00:00:00 5.109E-05           6  1.033E-02 -1.262E-03
+     1958  1.000E-01 1.000E-01  00:00:00 5.109E-05           6  7.094E-03 -1.546E-03
+Restart Number  1 at 0.10000
+Results Number  1 at step time 0.10000
+Output Field Frame Number   5, of    5, at step time 1.000E-01
+Output Field Frame Number   1, of    1, at step time 1.000E-01
+  EXPLICIT EXECUTABLE TIME SUMMARY
+       USER TIME (SEC)      =  0.10000
+       SYSTEM TIME (SEC)    =  0.10000
+       WALLCLOCK TIME (SEC) =            0
+              INIT (SEC) =          0
+              MAIN (SEC) =          0
+
+  THE ANALYSIS HAS COMPLETED SUCCESSFULLY
+

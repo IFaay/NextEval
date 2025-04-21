@@ -133,7 +133,7 @@ def test_connection():
             print("🔌 隧道关闭")
 
 if __name__ == '__main__':
-    file_path = "../data/Abaqus/LE1_ Plane stress elements—elliptic membrane/le1_cps3_c.inp"
+    file_path = "/home/yfsun/Documents/NextEval/data/Abaqus/LE1_ Plane stress elements—elliptic membrane/nle1xf3c.inp"
 
     test_connection()
     if not os.path.exists(file_path):

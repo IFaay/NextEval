@@ -1,6 +1,6 @@
 1
 
-   Abaqus 2023                                  Date 21-4月-2025   Time 21:07:00
+   Abaqus 2023                                  Date 22-4月-2025   Time 00:05:10
    For use by Supplied by Team-SolidSQUAD under license from Dassault Systemes or its subsidiary.
 
 
@@ -83,6 +83,12 @@
   *ELASTIC, TYPE=ISO
   *SOLID SECTION, ELSET=M001P001, MATERIAL=M001P001
   *SOLID SECTION, ELSET=M001P001, MATERIAL=M001P001
+
+ ***WARNING: FOR TWO-DIMENSIONAL MODELS, IF A NON-UNITY THICKNESS IS SPECIFIED 
+             FOR TWO-DIMENSIONAL SOLID ELEMENTS AND THESE ELEMENTS ARE INVOLVED 
+             IN AN INTERACTION SUCH AS CONTACT, THE SAME THICKNESS SHOULD BE 
+             SPECIFIED FOR THE OUT-OF-PLANE THICKNESS OF THE CORRESPONDING 
+             SURFACE UNDER *SURFACE INTERACTION.
   *BOUNDARY, OP=NEW
   *BOUNDARY, OP=NEW
   *OUTPUT,FIELD
@@ -100,6 +106,7 @@
   *NODE FILE, GLOBAL=YES
   *OUTPUT,FIELD
   *NODE OUTPUT
+  *EL PRINT,POS=AVERAGED AT NODES
   *END STEP
   *STEP, AMP=RAMP
   *STATIC
@@ -131,7 +138,7 @@
        WALLCLOCK TIME (SEC) =            0
 1
 
-   Abaqus 2023                                  Date 21-4月-2025   Time 21:07:05
+   Abaqus 2023                                  Date 22-4月-2025   Time 00:05:15
    For use by Supplied by Team-SolidSQUAD under license from Dassault Systemes or its subsidiary.
 
      : NAFEMS TEST LE1, Plane Stress Elements -- Elliptic Membr.  [CPS3]                       STEP    1  INCREMENT    1
@@ -195,6 +202,7 @@
 
 
                               ANALYSIS COMPLETE
+                              WITH      1 WARNING MESSAGES ON THE DAT FILE
 
 
 
