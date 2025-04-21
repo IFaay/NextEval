@@ -16,8 +16,8 @@ os.environ['HTTPS_PROXY'] = ''
 
 # ================== 配置区 ==================
 INTERNAL_SERVER_IP = '172.16.64.217'
-USE_PROXY_JUMP = False  # True = 使用跳板 jump2，False = 直连 eval
-LOCAL_PORT = 8000
+USE_PROXY_JUMP = True  # True = 使用跳板 jump2，False = 直连 eval
+LOCAL_PORT = 18000
 FLASK_PORT = 5000
 
 # 跳板机配置
